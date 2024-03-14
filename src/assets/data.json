@@ -1,0 +1,310 @@
+{
+    "datamember":[
+        {
+            "id":1,
+            "name": "Nguyễn Hữu Ngọ",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Engineer",
+            "location": "Hanoi"
+        },
+        {
+            "id":2,
+            "name": "Person 2",
+            "avatar":"https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Designer",
+            "location": "Ho Chi Minh City"
+        },
+        {
+            "id":3,
+            "name": "Person 3",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Teacher",
+            "location": "Da Nang"
+        },
+        {
+            "id":4,
+            "name": "Person 4",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":5,
+            "name": "Person 5",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":6,
+            "name": "Person 6",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":7,
+            "name": "Person 7",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":8,
+            "name": "Person 8",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":9,
+            "name": "Person 9",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":10,
+            "name": "Person 10",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":11,
+            "name": "Person 11",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":12,
+            "name": "Person 12",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        },
+        {
+            "id":13,
+            "name": "Person 13",
+            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
+            "title": "Developer",
+            "location": "Hai Phong"
+        }
+    ],
+    "sidebar":[
+        {
+            "path":"/",
+            "id": 1,
+            "name": "Trang Chủ"
+        },
+        {
+            "path":"/du-an",
+            "id": 3,
+            "name": "Dự Án"
+        },
+        {
+            "path":"/san-pham",
+            "id": 4,
+            "name": "Sản Phẩm"
+        },
+        {
+            "path":"/tin-tuc",
+            "id": 5,
+            "name": "Tin Tức"
+        },
+        {
+            "path":"/lien-he",
+            "id": 6,
+            "name": "Liên Hệ"
+        }
+    ],
+    "interview":[
+        {
+            "countup": "10",
+            "title": "Năm Kinh Nghiệm",
+            "color": "#ff4220"
+        },
+        {
+            "countup": "600",
+            "title": "Chương Trình",
+            "color": "#3dc5ce"
+        },
+        {
+            "countup": "200",
+            "title": "Khách Hàng",
+            "color": "#ffd231"
+        }
+    ],
+    "customer":[
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 1
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 2
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 3
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 4
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 5
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 6
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 7
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
+            "imgAlt":"thumbs",
+            "id": 8
+        }
+
+    ],
+    "tourament":[
+        { 
+            "title": "Chân Thành",
+            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+        },
+        { 
+            "title": "Tạo Giá Trị", 
+            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+        },
+        { 
+            "title": "Tận Tâm", 
+            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+        }
+    ],
+    "imageMedia":[
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image1",
+            "id":1
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image2",
+            "id":2
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image3",
+            "id":3
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image4",
+            "id":4
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image5",
+            "id":5
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image6",
+            "id":6
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/460x420x1/upload/photo/msc-20240.jpg",
+            "imgAlt":"image7",
+            "id":7
+        }
+    ],
+    "tourmember":[
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+            "imgAlt":"tourmember_1",
+            "description":"Nội dung của giá trị cốt lõi"
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+            "imgAlt":"tourmember_2",
+            "description":"Nội dung của giá trị cốt lõi"
+        },
+        {
+            "imgSrc":"http://www.grandteambuilding.vn/thumbs/230x100x2/upload/news/logo-2-01-6436.png",
+            "imgAlt":"tourmember_3",
+            "description":"Nội dung của giá trị cốt lõi"
+        }
+    ],
+    "slider":[
+        {
+            "id":1,
+            "author":"DNSEVENT",
+            "member":"Vietinbank",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        },
+        {
+            "id":2,
+            "author":"DNSEVENT",
+            "member":"Lê Gia",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img2.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        },
+        {
+            "id":3,
+            "author":"DNSEVENT",
+            "member":"Vietcombank",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img3.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        },
+        {
+            "id":4,
+            "author":"DNSEVENT",
+            "member":"THPT Chuyên Lam Sơn",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img4.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        }
+    ],
+    "news" :[
+        {
+            "id":1,
+            "title":"Ý nghĩa - Những giá trị đọng lại của ngày Họp lớp - Hội khoá đã được nhà đài TTV khắc hoạ sinh động, chân thực !",
+            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageAlt":"",
+            "path":"https://www.facebook.com/watch/?v=702685938346723"
+        },
+        {
+            "id":2,
+            "title":"Những người trẻ tâm huyết với lịch sử, văn hóa truyền thống",
+            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageAlt":"",
+            "path":"https://baothanhhoa.vn/dat-va-nguoi/nhung-nguoi-tre-tam-huyet-voi-lich-su-van-hoa-truyen-thong/200624.htm"
+        },
+        {
+            "id":3,
+            "title":"TEAM BUILDING TRẢI NGHIỆM LỊCH SỬ 2023",
+            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageAlt":"",
+            "path":"https://www.facebook.com/watch/?v=1829891707373233"
+        },
+        {
+            "id":4,
+            "title":"Truyền Hình TX NGHI SƠN đã đưa tin về những hoạt động của CTY CP SỰ KIỆN VÀ DU LỊCH ĐÔNG SƠN",
+            "imageSrc": "https://drive.google.com/file/d/1lh5yo4O1qdSeU0uur_HxZt2TqwpjEWW_/view?usp=sharing",
+            "imageAlt":"",
+            "path":"https://www.facebook.com/watch/?v=229200386521646"
+        }
+    ]
+}

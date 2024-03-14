@@ -1,0 +1,68 @@
+.fui-connect-social .social-list {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .fui-connect-social .social-item:hover .social-link {
+    width: 200px;
+  }
+  .fui-connect-social .social-item:hover .text {
+    display: block;
+  }
+  .fui-connect-social .social-item:hover .icon {
+    color: #fff;
+  }
+  .fui-connect-social .social-item:nth-child(1):hover .text {
+    color: #4267b2;
+  }
+  .fui-connect-social .social-item:nth-child(1):hover .icon {
+    background-color: #4267b2;
+  }
+  .fui-connect-social .social-item:nth-child(2):hover .text {
+    color: #108232;
+  }
+  .fui-connect-social .social-item:nth-child(2):hover .icon {
+    background-color: #108232;
+  }
+  .fui-connect-social .social-item:nth-child(3):hover .text {
+    color: #dc2626;
+  }
+  .fui-connect-social .social-item:nth-child(3):hover .icon {
+    background-color: #dc2626;
+  }
+  .fui-connect-social .social-link {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    color: #000;
+    border-radius: 100rem;
+    box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1),
+      0 2px 4px -2px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  .fui-connect-social .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 100rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  .fui-connect-social .icon svg {
+    height: 25px;
+  }
+  .fui-connect-social .text {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+  }
+  
