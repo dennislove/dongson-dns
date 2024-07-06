@@ -30,6 +30,7 @@
 }
 .carousel .list .item .author{
     font-weight: bold;
+    color: #fff;
     letter-spacing: 10px;
 }
 
@@ -44,9 +45,9 @@
 .thumbnail{
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 49%;
     width: max-content;
-    z-index: 100;
+    z-index: 10;
     display: flex;
     gap: 20px;
 }
@@ -67,11 +68,14 @@
     border-radius: 20px;
 }
 .thumbnail .item .content{
+    background: #000022;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 100%;
     color: #fff;
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
+    border-radius: 0px 0px 20px 20px;
+    bottom: 0px;
 }
 
 .thumbnail .item .content .description{
@@ -82,7 +86,7 @@
     position: absolute;
     top: 80%;
     right: 52%;
-    z-index: 100;
+    z-index: 10;
     width: 300px;
     max-width: 30%;
     display: flex;
@@ -93,16 +97,17 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #eee4;
+    background-color: #fff;
+    color: #000;
     border: none;
-    color: #fff;
+  
     font-family: monospace;
     font-weight: bold;
     transition: .5s;
 }
 .arrows button:hover{
-    background-color: #fff;
-    color: #000;
+    background-color: #eee4;
+    color: #fff;
 }
 
 /* animation */
@@ -133,7 +138,9 @@
 .carousel.next .list .item:nth-child(1) img,
 .carousel.next .list .item:nth-child(2) img,
 .carousel.next .list .item:nth-child(3) img,
-.carousel.next .list .item:nth-child(4) img{
+.carousel.next .list .item:nth-child(4) img,
+.carousel.next .list .item:nth-child(5) img,
+.carousel.next .list .item:nth-child(6) img{
     width: 150px;
     height: 220px;
     position: absolute;
@@ -187,6 +194,8 @@
 .carousel.prev .list .item:nth-child(2) img,
 .carousel.prev .list .item:nth-child(3) img,
 .carousel.prev .list .item:nth-child(4) img,
+.carousel.prev .list .item:nth-child(5) img,
+.carousel.prev .list .item:nth-child(6) img,
 .carousel.prev .list .item:nth-child(1) img{
     animation: outFrame 0.5s linear 1 forwards;
     position: absolute;
@@ -232,6 +241,14 @@
 .carousel.prev .list .item:nth-child(4) .content .author,
 .carousel.prev .list .item:nth-child(4) .content .topic,
 .carousel.prev .list .item:nth-child(4) .content .des,
+
+.carousel.prev .list .item:nth-child(5) .content .author,
+.carousel.prev .list .item:nth-child(5) .content .topic,
+.carousel.prev .list .item:nth-child(5) .content .des,
+
+.carousel.prev .list .item:nth-child(6) .content .author,
+.carousel.prev .list .item:nth-child(6) .content .topic,
+.carousel.prev .list .item:nth-child(6) .content .des,
 
 .carousel.prev .list .item:nth-child(1) .content .author,
 .carousel.prev .list .item:nth-child(1) .content .topic,

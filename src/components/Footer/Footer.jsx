@@ -37,7 +37,12 @@ function Footer() {
                   </div>
                 </li>
                 <li className=' uppercase text-white font-medium text-xl mb-10'>Dịch vụ
-                  <h4 className=' mt-4 text-sm font-light '>MSC MOVING FORWARD WITH VIETNAM</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Media quay chụp</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Nhà rạp không gian</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Âm thanh, ánh sáng</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Màn hình LED</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Sân khấu sự kiện</h4>
+                  <h4 className=' mt-4 text-sm  font-light '>Bộ gametool teambuilding</h4>
                 </li>
                 <li className=' uppercase text-white font-medium text-xl'>Liên hệ ngay
                   <div className='mt-4'> <LinkNow/></div>
@@ -56,8 +61,9 @@ function Footer() {
   </svg>
             
           <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Address</h2>
-            <span>38 đường số 8, Khu Dân Cư Cityland Park Hills, Gò Vấp, Thành Phố Hồ Chí Minh</span>
+            <h2 className=' uppercase font-semibold '>Địa chỉ</h2>
+            <span>72 đường Tống Duy Tân, P.Bắc Sơn, TP Sầm Sơn, 
+            tỉnh Thanh Hóa</span>
           </div>
             </div>
             <div className='px-4 py-5 bg-yellow-600  flex items-center rounded-md gap-5'>
@@ -67,7 +73,10 @@ function Footer() {
 
           <div className='text-white'>
             <h2 className=' uppercase font-semibold '>Hotline</h2>
-            <span>0123456</span>
+            <div className=' flex flex-col'>
+              <span>0983.378.939</span>
+              <span>0971.729.698</span>
+            </div>
           </div>
             </div>
             <div className='px-4 py-5 bg-yellow-600  flex gap-5 items-center rounded-md'>
@@ -77,7 +86,7 @@ function Footer() {
 
           <div className='text-white'>
             <h2 className=' uppercase font-semibold '>Email</h2>
-            <span>dongsonevent@gmail.com</span>
+            <span>dongsonevent.travel@gmail.com</span>
           </div>
             </div>
         </div>

@@ -1,96 +1,63 @@
 {
     "datamember":[
-        {
-            "id":1,
-            "name": "Nguyễn Hữu Ngọ",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Engineer",
-            "location": "Hanoi"
-        },
+        
         {
             "id":2,
-            "name": "Person 2",
+            "name": "MC Hà Đông",
             "avatar":"https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Designer",
             "location": "Ho Chi Minh City"
         },
         {
             "id":3,
-            "name": "Person 3",
+            "name": "MC Việt Phương",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Teacher",
             "location": "Da Nang"
         },
         {
             "id":4,
-            "name": "Person 4",
+            "name": "MC Tiến Đạt",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         },
         {
             "id":5,
-            "name": "Person 5",
+            "name": "MC Huy Hùng",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         },
         {
             "id":6,
-            "name": "Person 6",
+            "name": "MC Công Sơn",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         },
         {
             "id":7,
-            "name": "Person 7",
+            "name": "MC Hoàng Duy",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         },
         {
             "id":8,
-            "name": "Person 8",
+            "name": "MC Vân Anh",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         },
         {
             "id":9,
-            "name": "Person 9",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":10,
-            "name": "Person 10",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":11,
-            "name": "Person 11",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":12,
-            "name": "Person 12",
-            "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
-            "title": "Developer",
-            "location": "Hai Phong"
-        },
-        {
-            "id":13,
-            "name": "Person 13",
+            "name": "MC Tâm Nghèn",
             "avatar": "https://images.unsplash.com/photo-1440589473619-3cde28941638?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=387&amp;q=80",
             "title": "Developer",
             "location": "Hai Phong"
         }
+      
     ],
     "sidebar":[
         {
@@ -99,14 +66,19 @@
             "name": "Trang Chủ"
         },
         {
+            "path":"/gioi-thieu",
+            "id": 2,
+            "name": "Giới Thiệu"
+        },
+        {
             "path":"/du-an",
             "id": 3,
             "name": "Dự Án"
         },
         {
-            "path":"/san-pham",
+            "path":"/dich-vu",
             "id": 4,
-            "name": "Sản Phẩm"
+            "name": "Dịch Vụ"
         },
         {
             "path":"/tin-tuc",
@@ -119,23 +91,7 @@
             "name": "Liên Hệ"
         }
     ],
-    "interview":[
-        {
-            "countup": "10",
-            "title": "Năm Kinh Nghiệm",
-            "color": "#ff4220"
-        },
-        {
-            "countup": "600",
-            "title": "Chương Trình",
-            "color": "#3dc5ce"
-        },
-        {
-            "countup": "200",
-            "title": "Khách Hàng",
-            "color": "#ffd231"
-        }
-    ],
+   
     "customer":[
         {
             "imgSrc":"http://www.grandteambuilding.vn/thumbs/225x100x2/upload/photo/khach-2-05-72190.png",
@@ -181,15 +137,19 @@
     ],
     "tourament":[
         { 
-            "title": "Chân Thành",
+            "title": "Tầm Nhìn",
             "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
         },
         { 
-            "title": "Tạo Giá Trị", 
+            "title": "sứ mệnh", 
             "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
         },
         { 
-            "title": "Tận Tâm", 
+            "title": "chính sách chất lượng", 
+            "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
+        },
+        { 
+            "title": "giá trị cốt lõi", 
             "content": "http://www.grandteambuilding.vn/thumbs/210x460x1/upload/news/pvi-2646.png" 
         }
     ],
@@ -251,28 +211,48 @@
         {
             "id":1,
             "author":"DNSEVENT",
-            "member":"Vietinbank",
-            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
-            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+            "type":"GAME",
+            "member":"ĐƯỜNG ĐUA KHỔNG LỒ",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img2.jpg?raw=true",
+            "description":"Lorem ipsum doloe. Ut, exercitationem eum aperiam illo illum laudantium?"
         },
         {
             "id":2,
             "author":"DNSEVENT",
-            "member":"Lê Gia",
+            "type":"GAME",
+            "member":"VƯỢT CHƯỚNG NGẠI VẬT",
             "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img2.jpg?raw=true",
             "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
         },
         {
             "id":3,
             "author":"DNSEVENT",
-            "member":"Vietcombank",
+            "type":"GAME",
+            "member":"XẠ THỦ TRANH TÀI",
             "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img3.jpg?raw=true",
             "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
         },
         {
             "id":4,
             "author":"DNSEVENT",
-            "member":"THPT Chuyên Lam Sơn",
+            "type":"GAME",
+            "member":"CHINH PHỤC THỬ THÁCH",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img4.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        },
+        {
+            "id":5,
+            "author":"DNSEVENT",
+            "type":"GAME",
+            "member":"BÓNG RỔ ĐẠI TÀI",
+            "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img3.jpg?raw=true",
+            "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
+        },
+        {
+            "id":6,
+            "author":"DNSEVENT",
+            "type":"GAME",
+            "member":"BƯỚC CHÂN ĐỒNG ĐỘI",
             "image":"https://github.com/HoanghoDev/slider_1/blob/main/image/img4.jpg?raw=true",
             "description":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut sequi, rem magnam nesciunt minima placeat, itaque eum neque officiis unde, eaque optio ratione aliquid assumenda facere ab et quasi ducimus aut doloribus non numquam. Explicabo, laboriosam nisi reprehenderit tempora at laborum natus unde. Ut, exercitationem eum aperiam illo illum laudantium?"
         }
@@ -281,30 +261,51 @@
         {
             "id":1,
             "title":"Ý nghĩa - Những giá trị đọng lại của ngày Họp lớp - Hội khoá đã được nhà đài TTV khắc hoạ sinh động, chân thực !",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageSrc": "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/415960670_357775207007190_399375551463903838_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=26bHKODXBp0Ab7bQVMj&_nc_ht=scontent.fsgn2-8.fna&oh=00_AfB1WdNpDq5zfzoZY9ZULmO0nysc6zE2tUhWXe56SjtKIA&oe=6625A686",
             "imageAlt":"",
+            "view":"",
             "path":"https://www.facebook.com/watch/?v=702685938346723"
         },
         {
             "id":2,
             "title":"Những người trẻ tâm huyết với lịch sử, văn hóa truyền thống",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageSrc": "https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/393265714_313898298061548_2210888925330572546_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=3b7Ad5kA_8IAb6V-z0k&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfCsecHYeJlbfpCU9xSLNdxkeJdBm3x2jsw7Qz--84zSCg&oe=6625B1F3",
             "imageAlt":"",
+            "view":"",
             "path":"https://baothanhhoa.vn/dat-va-nguoi/nhung-nguoi-tre-tam-huyet-voi-lich-su-van-hoa-truyen-thong/200624.htm"
         },
         {
             "id":3,
             "title":"TEAM BUILDING TRẢI NGHIỆM LỊCH SỬ 2023",
-            "imageSrc": "https://github.com/HoanghoDev/slider_1/blob/main/image/img1.jpg?raw=true",
+            "imageSrc": "https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/360121157_260110070107038_8662402773123283541_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=5f2048&_nc_ohc=Z4zewJdnYrMAb4VCkhf&_nc_ht=scontent.fsgn2-6.fna&oh=00_AfDJbK87mjRXxBxXMyawh34A3aQnZZkOpw1VEq444DGH6g&oe=6625AB52",
             "imageAlt":"",
+            "view":"",
             "path":"https://www.facebook.com/watch/?v=1829891707373233"
         },
         {
             "id":4,
             "title":"Truyền Hình TX NGHI SƠN đã đưa tin về những hoạt động của CTY CP SỰ KIỆN VÀ DU LỊCH ĐÔNG SƠN",
-            "imageSrc": "https://drive.google.com/file/d/1lh5yo4O1qdSeU0uur_HxZt2TqwpjEWW_/view?usp=sharing",
+            "imageSrc": "https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/359463406_258860030232042_3955969963493651225_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=7FHqLDOpBqoAb6FCrjd&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfDAHarAHYdkiV-SNDvjiY724t5qAjkkvHknVBbnLCqKHg&oe=66259CFF",
             "imageAlt":"",
+            "view":"",
             "path":"https://www.facebook.com/watch/?v=229200386521646"
+        }
+    ],
+    "major":[
+        {
+            "title":"Event - Gala Dinner",
+            "description":"Mang đến những dịch vụ hàng đầu trong tổ chức sự kiện cho các đơn vị, doanh nghiệp với bề dày kinh nghiệm và sự khác biệt sáng tạo.",
+            "path":"/tin-tuc/event"
+        },
+        {
+            "title":"Teambuilding",
+            "description":"Teambuilding cũng là thế mạnh của chúng tôi với các sản phẩm tầm cỡ hàng đầu Việt Nam mang đến những giá trị khai phá sức mạnh tiềm ẩn của con người.",
+            "path":""
+        },
+        {
+            "title":"Travelling",
+            "description":"Mang mọi người đến với những vùng đất mới trên quê hương đất nước và kết hợp với hoạt động teambuilding phát triển kĩ năng tổ chức.",
+            "path":""
         }
     ]
 }

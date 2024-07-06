@@ -1,14 +1,42 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Service/style.css'
 import data from "../../assets/data.json"
+import { getDatabase, ref, child, get } from "firebase/database";
+
 
 function Slider() {
-    const sliders = data.slider;
+    // const sliders = data.slider;
+    const [sliders, setSliders] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slideDirection, setSlideDirection] = useState("");
     const [transform, setTransform] = useState("")
-    const [thumbnailOrder, setThumbnailOrder] = useState(sliders.map((_, index) => index));
+    // const [thumbnailOrder, setThumbnailOrder] = useState(sliders.map((_, index) => index));
+    const [thumbnailOrder, setThumbnailOrder] = useState([]);
    
+    useEffect(() => {
+        const dbRef = ref(getDatabase());
+    
+        get(child(dbRef, `sliders`))
+          .then((snapshot) => {
+            if (snapshot.exists()) {
+              const fetchedMedia = [];
+              const initialStates = {};
+              snapshot.forEach(childSnapshot => {
+                const key = childSnapshot.key;
+                const data = childSnapshot.val();
+                fetchedMedia.push({ id: key, ...data });
+                initialStates[key] = { isPlaying: false, ref: React.createRef() }; // Initialize state and ref for each video
+              });
+              setSliders(fetchedMedia);
+              setThumbnailOrder(fetchedMedia.map((_, index) => index));
+            } else {
+              console.log("No data available");
+            }
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }, []);
    
     const nextSlide = () => {
         const newSlide = (currentSlide + 1) % sliders.length;
@@ -67,9 +95,9 @@ function Slider() {
                     >
                         <img src={item.image} alt={item.member} loading='lazy' />
                         <div className={`content  md:top-[15%] pm:top-[6%]`}>
-                            <div className="author md:text-base pm:text-sm">{item.author}</div>
-                            <div className="topic md:text-[5rem] pm:text-[60px]">{item.member}</div>
-                            <div className="des">{item.description}</div>
+                            <div className="author md:text-base pm:text-sm">GAME</div>
+                            <div className="topic md:text-[5rem] pm:text-[60px]">{item.name}</div>
+                            {/* <div className="des">{item.description}</div> */}
                         </div>
                     </div>
                 ))}
@@ -84,9 +112,9 @@ function Slider() {
                             key={items.id} 
                             onClick={() => setCurrentSlide(index)}
                         >
-                            <img src={items.image} alt={items.member} loading='lazy'/>
+                            <img src={items.image} alt={items.name} loading='lazy'/>
                             <div className="content">
-                                <div className="title">{items.member}</div>
+                                <div className="title">{items.name}</div>
                             </div>
                         </div>
                     );

@@ -12,7 +12,7 @@ const Accourdion = ({ items }) => {
       {items.map((item, index) => (
         <div key={index} className="mb-4">
           <button
-            className={`w-full p-4 text-left text-xl font-medium rounded-t-lg ${
+            className={`w-full p-4 text-left text-xl font-medium rounded-t-lg uppercase ${
               activeIndex === index ? 'bg-gray-300' : 'bg-gray-100'
             }`}
             onClick={() => handleClick(index)}
