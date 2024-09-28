@@ -7,6 +7,8 @@ import NewsPage from "../pages/News/NewsPage";
 import ProductSer from "../pages/Service/ProductSer";
 import ContactPage from "../pages/ContactCT/ContactPage";
 import NewsEvent from "../pages/News/NewsEvent";
+import DetailNewsPage from "../pages/Project/DetailNewsPage";
+import NewsTable from '../admin/News/NewsTable'
 
 export const routes = [
     {
@@ -26,6 +28,12 @@ export const routes = [
         element:Project,
         title: "Dự Án",
         isShowHeader: true
+    },
+    {
+        path:'/du-an/:slug',
+        element:DetailNewsPage,
+        isShowHeader: true,
+        
     },
     {
         path:'/dich-vu',
@@ -56,4 +64,8 @@ export const routes = [
         title: "404",
         element:NotFoundPage
     },
+    {
+        path: '/news-them-add-du-an',
+        element:NewsTable
+    }
 ]

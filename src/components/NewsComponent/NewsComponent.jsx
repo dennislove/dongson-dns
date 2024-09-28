@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-// import { useNavigate } from 'react-router-dom'
-import { getDatabase, ref, child, get } from "firebase/database";
+import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
+
 import { Link } from 'react-router-dom';
 
 function NewsComponent() {
@@ -13,28 +13,35 @@ function NewsComponent() {
       setQuery(event.target.value.toLowerCase());
     };
     
+
     useEffect(() => {
-      const dbRef = ref(getDatabase());
+      const fetchData = async () => {
+        const db = getFirestore();
+        const newsCollection = collection(db, 'News'); // Thay đổi 'sliders' thành collection của bạn
+        
+        try {
+          const snapshot = await getDocs(newsCollection);
   
-      get(child(dbRef, `News`))
-        .then((snapshot) => {
-          if (snapshot.exists()) {
-            // Here, we're converting the fetched data to include the Firebase keys as 'id'
-            const fetchedNews = [];
-            snapshot.forEach(childSnapshot => {
-              const key = childSnapshot.key;
-              const data = childSnapshot.val();
-              fetchedNews.push({ id: key, ...data });
+          if (!snapshot.empty) {
+            const fetchedMedia = [];
+            snapshot.forEach(doc => {
+              const key = doc.id;
+              const data = doc.data();
+              fetchedMedia.push({ id: key, ...data });
+              
             });
-            setNews(fetchedNews);
+  
+            setNews(fetchedMedia);
           } else {
-            console.log("No data available in News");
+            console.log("No data available");
           }
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-  }, []);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      fetchData();
+    }, []); 
 
     useEffect(() => {
       // Filter news based on the query
@@ -49,7 +56,8 @@ const clearInput = () => {
   setFilteredNews([]); 
 };
 //---------show more - show less --------
-  const total =news.length;
+  const total = news.length;
+ 
   // State ban đầu dựa trên kích thước màn hình
   const initialItemsPerPage = window.innerWidth >= 960 ? 6 : window.innerWidth <= 576 ? 3 : 4;
   const [itemsPerPage, setItemsPerPage] = useState(initialItemsPerPage);
@@ -88,7 +96,7 @@ const clearInput = () => {
  
   return (
    <div>
-      <div className="relative my-4 flex items-center">
+      <div className="relative my-4 flex items-center font-inter">
         <input
           type="text"
           value={query} 
@@ -111,10 +119,10 @@ const clearInput = () => {
 
       </div>
 
-      <div className='grid md:grid-cols-3 sm:grid-cols-2 pm:grid-cols-1 gap-5'>
+      <div className='grid md:grid-cols-3 sm:grid-cols-2 pm:grid-cols-1 gap-5 font-inter'>
      
-      {filteredNews.map((item, index) => (
-        <Link target='blank' to={item.link} data-id={item.id} className='group rounded-lg bg-white overflow-hidden relative' key={index}>
+          {filteredNews.slice(0, visibleItems).map((item, index) => (
+        <Link to={item.link} target='blank' data-id={item.id} className='group rounded-lg bg-white overflow-hidden relative' key={index}>
           <img loading='lazy' src={item.image} alt="" className='rounded-lg group-hover:scale-125 duration-300 
           transform ease-out '/>
     
@@ -130,13 +138,15 @@ const clearInput = () => {
    </div>
   
  <div className='mt-10'>
-    
-    <button onClick={handleViewToggle}  className=" lg:px-8 md:px-6  lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                      duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                      before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-                  before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-                  {visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}
-                  </button>
+        
+        <button onClick={handleViewToggle}
+     className={`font-inter cursor-pointer relative lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-white rounded-lg transition-all bg-yellow-600
+    duration-1000 ease-in-out inline-block overflow-hidden capitalize shadow-md hover:bg-transparent hover:text-yellow-600
+    before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
+before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear ${total<7 ? 'hidden' : "block"}`}>
+{visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}
+          </button>
+          
  </div>
    </div>
   )

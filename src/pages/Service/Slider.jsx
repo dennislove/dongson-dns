@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Service/style.css'
-import data from "../../assets/data.json"
 import { getDatabase, ref, child, get } from "firebase/database";
-
+import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
 
 function Slider() {
     // const sliders = data.slider;
@@ -10,34 +9,66 @@ function Slider() {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slideDirection, setSlideDirection] = useState("");
     const [transform, setTransform] = useState("")
-    // const [thumbnailOrder, setThumbnailOrder] = useState(sliders.map((_, index) => index));
     const [thumbnailOrder, setThumbnailOrder] = useState([]);
    
-    useEffect(() => {
-        const dbRef = ref(getDatabase());
+    // useEffect(() => {
+    //     const dbRef = ref(getDatabase());
     
-        get(child(dbRef, `sliders`))
-          .then((snapshot) => {
-            if (snapshot.exists()) {
+    //     get(child(dbRef, `sliders`))
+    //       .then((snapshot) => {
+    //         if (snapshot.exists()) {
+    //           const fetchedMedia = [];
+    //           const initialStates = {};
+    //           snapshot.forEach(childSnapshot => {
+    //             const key = childSnapshot.key;
+    //             const data = childSnapshot.val();
+    //             fetchedMedia.push({ id: key, ...data });
+    //             initialStates[key] = { isPlaying: false, ref: React.createRef() }; // Initialize state and ref for each video
+    //           });
+    //           setSliders(fetchedMedia);
+    //           setThumbnailOrder(fetchedMedia.map((_, index) => index));
+    //         } else {
+    //           console.log("No data available");
+    //         }
+    //       })
+    //       .catch((error) => {
+    //         console.error(error);
+    //       });
+    //   }, []);
+
+    useEffect(() => {
+        const fetchData = async () => {
+          const db = getFirestore();
+          const slidersCollection = collection(db, 'sliders'); // Thay đổi 'sliders' thành collection của bạn
+          
+          try {
+            const snapshot = await getDocs(slidersCollection);
+    
+            if (!snapshot.empty) {
               const fetchedMedia = [];
               const initialStates = {};
-              snapshot.forEach(childSnapshot => {
-                const key = childSnapshot.key;
-                const data = childSnapshot.val();
+    
+              snapshot.forEach(doc => {
+                const key = doc.id;
+                const data = doc.data();
                 fetchedMedia.push({ id: key, ...data });
                 initialStates[key] = { isPlaying: false, ref: React.createRef() }; // Initialize state and ref for each video
               });
+    
               setSliders(fetchedMedia);
               setThumbnailOrder(fetchedMedia.map((_, index) => index));
             } else {
               console.log("No data available");
             }
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      }, []);
+          } catch (error) {
+            console.error("Error fetching data:", error);
+          }
+        };
+    
+        fetchData();
+      }, []); 
    
+    // function for handle next to slide
     const nextSlide = () => {
         const newSlide = (currentSlide + 1) % sliders.length;
         setCurrentSlide(newSlide);
@@ -82,7 +113,7 @@ function Slider() {
     }, [currentSlide]); 
 
   return (
-    <div className={`carousel ${slideDirection} ${transform}`}>
+    <div className={`carousel ${slideDirection} ${transform} font-inter` }>
             <div className={`list `}  >  
                 {sliders.map((item, index) => (
                     <div onClick={() => setCurrentSlide(index)}
@@ -93,11 +124,10 @@ function Slider() {
                         zIndex: index === currentSlide ? 1 : -1 
                     }}
                     >
-                        <img src={item.image} alt={item.member} loading='lazy' />
+                        <img src={item.image} alt={item.member} loading='lazy'  className='w-full sm:h-full pm:h-1/2'/>
                         <div className={`content  md:top-[15%] pm:top-[6%]`}>
                             <div className="author md:text-base pm:text-sm">GAME</div>
-                            <div className="topic md:text-[5rem] pm:text-[60px]">{item.name}</div>
-                            {/* <div className="des">{item.description}</div> */}
+                            <div className="topic md:text-[5rem] sm:text-6xl pm:text-[40px] ">{item.name}</div>
                         </div>
                     </div>
                 ))}
@@ -108,7 +138,7 @@ function Slider() {
                     const items = sliders[index];
                     return (
                         <div 
-                            className="item" 
+                            className="item pm:hidden sm:block" 
                             key={items.id} 
                             onClick={() => setCurrentSlide(index)}
                         >
@@ -121,7 +151,7 @@ function Slider() {
                 })}
             </div>
 
-            <div className="arrows">
+            <div className="arrows sm:top-[80%] right-1/2 pm:top-[40%]">
             <button id="prev" onClick={prevSlide} >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 mx-auto">
                 <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clipRule="evenodd" />

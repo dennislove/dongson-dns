@@ -19,10 +19,13 @@ function HeaderComponent() {
 
   return (
    <div>
-    <div className=''><NavbarHeader/></div>
-    <div className={`fixed w-full top-0 z-100 transform ease-linear duration-700 animate-slideIn ${
-        !isVisible && 'hidden' 
-      }`}><NavbarHeader/></div>
+      <div className=''>
+        <NavbarHeader />
+      </div>
+      <div className={`fixed w-full top-0 z-100 transform ease-linear duration-700 animate-slideIn 
+            ${!isVisible && 'hidden'}`}>
+        <NavbarHeader />
+      </div>
 
    </div>
   );

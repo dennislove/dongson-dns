@@ -86,13 +86,13 @@ function NewContact() {
     <div className=" bg-[#000022] pt-10 ">
     <div className=' max-w-[1300px] lg:m-auto  pm:mx-10 relative'>
         <div className='relative text-center '>
-            <div className='mb-5 text-center font-oxa'>
+            <div className='mb-5 text-center'>
                 <h2 className='  font-normal text-[40px] text-white capitalize'>Liên Hệ</h2>
             </div>
             
         </div>
        <div className='grid md:grid-cols-2 pm:grid-cols-1 gap-10'>
-        <div className='border p-5'>
+        <div className='border p-5 font-inter'>
           <form ref={form} onSubmit={sendEmail}>
                <div className='grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-2 pm:grid-cols-1 gap-5'>
             {inputs.map((input) =>(
@@ -114,9 +114,9 @@ function NewContact() {
                 </div>
              </div>
 
-          <div className='w-full border mt-5 border-[#cbd5e1] rounded-xl focus:text-white focus:border-yellow-600'>
+          {/* <div className='w-full border mt-5 border-[#cbd5e1] rounded-xl focus:text-white focus:border-yellow-600'>
             <input className='w-full bg-transparent py-4 px-6 text-yellow-50 focus:outline-none' type='file' name='file' accept='.jpg, .jpeg, .png, .pdf, .docs, .doc' />
-          </div>
+          </div> */}
           <div className='mt-5'>
             
             <button onClick={handleSendEmail} value="Send"  className="px-8 py-4 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 

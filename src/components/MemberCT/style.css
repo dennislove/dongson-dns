@@ -20,7 +20,7 @@
     opacity: 0;
     transition: all 1s cubic-bezier(0.5, -0.01, 0, 1.005);
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
     width: 520px;
     height: 100%;
@@ -62,8 +62,8 @@
     gap: 18px;
   }
   .fui-testimonial-1 .testimonialBodyPersonalImg {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 100rem;
     border: 2px solid #1dc071;
   }
@@ -99,7 +99,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(1) {
     width: 104.11px;
     height: 104.11px;
-    left: 208px;
+    left: 168px;
     top: 42px;
     animation-duration: 10s;
     transition-delay: 0.6s;
@@ -107,7 +107,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(2) {
     width: 113.75px;
     height: 113.75px;
-    left: 370px;
+    left: 300px;
     top: -39px;
     animation-duration: 12s;
     transition-delay: 0s;
@@ -115,7 +115,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(3) {
     width: 98.66px;
     height: 98.66px;
-    left: 200px;
+    left: 150px;
     top: 200px;
     animation-duration: 11s;
     transition-delay: 0.6s;
@@ -123,7 +123,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(4) {
     width: 99.62px;
     height: 99.62px;
-    left: 355px;
+    left: 285px;
     top: 135px;
     animation-duration: 6s;
     transition-delay: 0.2s;
@@ -131,7 +131,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(5) {
     width: 113.75px;
     height: 113.75px;
-    right: 355px;
+    right: 255px;
     top: -35px;
     animation-duration: 7s;
     transition-delay: 0.7s;
@@ -139,7 +139,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(6) {
     width: 99.62px;
     height: 99.62px;
-    right: 200px;
+    right: 100px;
     top: -70px;
     animation-duration: 5s;
     transition-delay: 0.1s;
@@ -147,7 +147,7 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(7) {
     width: 104.11px;
     height: 104.11px;
-    right: 366px;
+    right: 266px;
     top: 175px;
     animation-duration: 5s;
     transition-delay: 0.7s;
@@ -155,8 +155,8 @@
   .fui-testimonial-1 .testimoniaPersonalItem:nth-child(8) {
     width: 104.11px;
     height: 104.11px;
-    right: 211px;
-    top: 120px;
+    right: 111px;
+    top: 100px;
     animation-duration: 8s;
     transition-delay: 0.4s;
   }
@@ -170,60 +170,6 @@
   }
   .fui-testimonial-1 .testimoniaPersonalImage:hover {
     border-color: #1dc071;
-  }
-  @media (min-width: 1024px) and (max-width: 1239px) {
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(1) {
-      left: 60px;
-      width: 68px;
-      height: 68px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(2) {
-      width: 90px;
-      height: 90px;
-      left: 105px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(3) {
-      width: 85px;
-      height: 85px;
-      left: 55px;
-      top: 190px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(4) {
-      width: 85px;
-      height: 85px;
-      left: 235px;
-      top: 99px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(5) {
-      right: 120px;
-      width: 68px;
-      height: 68px;
-      top: 59px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(6) {
-      width: 90px;
-      height: 90px;
-      right: 205px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(7) {
-      width: 85px;
-      height: 85px;
-      right: 235px;
-      top: 190px;
-    }
-    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(8) {
-      width: 85px;
-      height: 85px;
-      right: 105px;
-      top: 159px;
-    }
-    
-  }
-  
-  @media (min-width: 1024px) and (max-width: 1239px) {
-    .fui-testimonial-1 .logoParalax {
-      display: none;
-    }
   }
   @media only screen and (max-width: 1023px) {
     .fui-testimonial-1 {
@@ -244,6 +190,7 @@
       display: none;
     }
   }
+  
   @media only screen and (max-width: 739px) {
     .fui-testimonial-1 .testimonialBodyPersonal {
       margin-top: 30px;
@@ -254,9 +201,7 @@
     .fui-testimonial-1 .testimonialBodyList {
       margin-bottom: 235px;
     }
-    .fui-testimonial-1 .testimonialContent {
-      font-size: 14px;
-    }
+  
     .fui-testimonial-1 .testimonialWrap {
       padding-bottom: 0;
     }
@@ -269,28 +214,82 @@
       transform: rotate(360deg) translate(-10px) rotate(-360deg);
     }
   }
-  @media (min-width: 576px) and (max-width: 1023px) {
+  @media (min-width: 1024px) and (max-width: 1239px) {
+    .fui-testimonial-1 .logoParalax {
+      display: none;
+    }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(1) {
-      left: 30px;
+      left: 60px;
+      width: 90px;
+      height: 90px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(2) {
+      width: 90px;
+      height: 90px;
+      left: 155px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(3) {
+      width: 90px;
+      height: 90px;
+      left: 60px;
+      top: 170px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(4) {
+      width: 85px;
+      height: 85px;
+      left: 165px;
+      top: 99px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(5) {
+      right: 80px;
+      width: 90px;
+      height: 90px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(6) {
+      width: 90px;
+      height: 90px;
+      right: 170px;
+      top: 50px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(7) {
+      width: 85px;
+      height: 85px;
+      right: 185px;
+      top: 190px;
+    }
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(8) {
+      width: 85px;
+      height: 85px;
+      right: 75px;
+      top: 130px;
+    }
+    
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .fui-testimonial-1 .testimoniaPersonalItem:nth-child(1) {
+      left: 130px;
+      top: 80px;
       width: 68px;
       height: 68px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(2) {
       width: 68px;
       height: 68px;
-      left: 30px;
+      left: 50px;
+      top: 10px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(3) {
       width: 68px;
       height: 68px;
       left: 30px;
-      top: 170px;
+      top: 130px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(4) {
       width: 68px;
       height: 68px;
-      left: 120px;
-      top: 170px;
+      left: 130px;
+      top: 200px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(5) {
       right: 30px;
@@ -302,12 +301,13 @@
       width: 68px;
       height: 68px;
       right: 120px;
+      top: 80px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(7) {
       width: 68px;
       height: 68px;
       right: 120px;
-      top: 150px;
+      top: 200px;
     }
     .fui-testimonial-1 .testimoniaPersonalItem:nth-child(8) {
       width: 68px;
@@ -315,10 +315,10 @@
       right: 30px;
       top: 159px;
     }
-    
-   
+  
   }
-  @media  (max-width: 575px) {
+  
+  @media  (max-width: 767px) {
    
     .fui-testimonial-1 .testimoniaPersonalItem {
       border-radius: 100rem;

@@ -4,15 +4,15 @@ import LinkNow from './LinkNow'
 
 function Footer() {
   return (
-    <div className='bg-[url(images/bg2.jpg)] object-fill bg-cover pt-10 bg-[#000022] pb-10  '>
+    <div className='bg-[url(images/banner3.png)] object-fill bg-cover pt-10 bg-[#000022] pb-10  '>
       <div className='max-w-[1300px]  lg:m-auto md:mx-10 sm:mx-8 pm:mx-5 relative'>
         <div className=' justify-between mb-10  sm:flex pm:block'>
           <div className=' mx-auto  md:w-[20%] sm:w-[30%] pm:w-full mb-10'> 
           <img loading='lazy' src={logo} alt="logo-DNS" className='text-white text-xs text-center w-28 h-28 rounded-full'/>
-          <h2 className=' uppercase text-yellow-600 font-oxa text-base'> Đông sơn event</h2>
-          <h2 className='text-sm text-white'>Giới hạn là bầu trời</h2>
+          <h2 className=' uppercase text-yellow-600  text-base'> Đông sơn events & travels</h2>
+          <h2 className='text-sm text-white font-inter'>Giới hạn là bầu trời</h2>
           </div>
-          <div className=' md:w-[77%] sm:w-[67%] pm:w-full'> 
+          <div className=' md:w-[77%] sm:w-[67%] pm:w-full font-inter'> 
               <ul className='grid  lg:gap-10 md:gap-8 sm:gap-6 pm:gap-0  md:grid-cols-4 sm:grid-cols-2 pm:grid-cols-1'>
                 <li className='  text-white font-medium text-xl uppercase'>Giờ làm việc
                   <div className='flex items-center mb-9 mt-4 '>
@@ -53,7 +53,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className='grid gap-10  md:grid-cols-3 sm:grid-cols-1 pm:grid-cols-1'>
+        <div className='grid gap-10  md:grid-cols-3 sm:grid-cols-1 pm:grid-cols-1 font-inter'>
             <div className='px-4 py-5 bg-yellow-600  flex gap-5  items-center rounded-md'>
             
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-20 h-20  lg:w-20 lg:h-20 md:w-20 md:h-20 sm:w-14 sm:h-14 pm:w-14 pm:h-14 text-white">
@@ -84,13 +84,13 @@ function Footer() {
   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
 </svg>
 
-          <div className='text-white'>
+          <div className='text-white '>
             <h2 className=' uppercase font-semibold '>Email</h2>
             <span>dongsonevent.travel@gmail.com</span>
           </div>
             </div>
         </div>
-        <h2 className='text-center font-sm text-white mt-10'>2024 Copyright <span className='text-yellow-600'>Đông Sơn Event</span>. Designed by <span className='text-yellow-600'>dongsonevent</span></h2>
+        <h2 className='text-center font-sm text-white mt-10 font-inter'>2024 Copyright <span className='text-yellow-600'>Đông Sơn Events & Travels</span>. Designed by <span className='text-yellow-600'>dnsteam©</span></h2>
       </div>
     </div>
   )

@@ -14,32 +14,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Oxanium:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=SVN-Hemi+Head:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=SVN-Hemi+Head:wght@400;700&display=swap" rel="stylesheet"> -->
+    
     <title></title>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const titleMap = {
-          '/': 'Đông Sơn Event',
-          '/gioi-thieu': 'Giới Thiệu',
-          '/tin-tuc': 'DNS | Tin Tức',
-          '/tin-tuc/event': 'Tin Tức | Event',
-          '/du-an': 'DNS | Dự Án',
-          '/dich-vu': 'DNS | Dịch Vụ',
-          '/lien-he': 'DNS | Liên Hệ',
-          '*': '404'
-        };
-
-        const updateTitle = () => {
-          const path = window.location.pathname;
-          const title = titleMap[path] || titleMap['*'];
-          document.title = title;
-        };
-
-        updateTitle();
-
-        window.addEventListener('popstate', updateTitle);
-      });
-    </script>
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

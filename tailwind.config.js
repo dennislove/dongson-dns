@@ -23,11 +23,16 @@ export default {
       fontFamily:{
         oxa: 'SVN-Hemi Head',
         pop: 'Poppins',
+        inter :'Inter'
       },
       colors:{
        
       },
-     keyframes:{
+      keyframes: {
+        rippleblue:{
+          '0%': { boxShadow: ' 0 0 0 0 #1dc07130, 0 0 0 10px #1dc07130, 0 0 0 20px #1dc07130' },
+          '100%': {  boxShadow: ' 0 0 0 10px #1dc07130, 0 0 0 20px #1dc07130, 0 0 0 30px #1dc07100' },
+        },
       showContent:{
         to:{
           transform:' translateY(50px)',
@@ -43,12 +48,13 @@ export default {
      },
      animation:{
       showContent:'showContent .5s 1s linear 1 forwards',
-      slideIn: 'slideIn .5s ease-in-out forwards',
+       slideIn: 'slideIn 1s ease-in-out forwards',
+       rippleblue: 'rippleblue 1s linear infinite',
      }
     },
 
   },
   plugins: [
-  
+    require('tailwindcss-textshadow'),
   ],
 }

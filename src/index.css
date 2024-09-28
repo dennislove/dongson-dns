@@ -2,7 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 @layer base{
-    body{
-        font-family: 'Inter', sans-serif;
-    }
+  @font-face {
+    font-family: 'SVN-Hemi Head';
+    src: url('/src/assets/SVN-Hemi-Head.woff') format('woff') format('woff'),
+        url('/src/assets/SVN-Hemi-Head.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
+  body {
+    font-family: 'SVN-Hemi Head', sans-serif;
+}
+}
+
+/* styles.css */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar {
+    -ms-overflow-style: 1px;  /* IE and Edge */
+    scrollbar-width: 1px;  /* Firefox */
+  }
+  @media (min-width: 356px) and (max-width:960px) { 
+    .scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  }
+  @media (min-width: 1440px) { 
+    .scrollbar {
+      -ms-overflow-style: 1px;  /* IE and Edge */
+      scrollbar-width: 1px;  /* Firefox */
+    }
+   }
