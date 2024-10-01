@@ -28,7 +28,6 @@ function getDeviceDependentStartScale() {
   }
 }
 
-
 function Customer() {
   const parallaxData = [
     {

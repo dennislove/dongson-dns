@@ -1,7 +1,7 @@
 import React from 'react'
 import TourMember from './TourMember'
 import Accourdion from './Accourdion'
-import data from '../../assets/data.json'
+import data from '../../data.json'
 
 function Tourament() {
     const touraments = data.tourament

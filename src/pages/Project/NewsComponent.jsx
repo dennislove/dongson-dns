@@ -1,39 +1,11 @@
 import React, { useEffect, useState } from 'react';
-// import { useNavigate } from 'react-router-dom'
-import { getDatabase, ref, child, get } from 'firebase/database';
 import { Link } from 'react-router-dom';
+import useRealtimeDatabase from '../../Hooks/useRealtimeDatabase';
 
 function NewsComponent() {
-  const [news, setNews] = useState([]);
+  const { data: news} = useRealtimeDatabase('du-an');
   const [filteredNews, setFilteredNews] = useState([]);
   const [query, setQuery] = useState('');
-
-  const handleSearchChange = (event) => {
-    setQuery(event.target.value.toLowerCase());
-  };
-
-  useEffect(() => {
-    const dbRef = ref(getDatabase());
-
-    get(child(dbRef, `du-an`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          // Here, we're converting the fetched data to include the Firebase keys as 'id'
-          const fetchedNews = [];
-          snapshot.forEach((childSnapshot) => {
-            const key = childSnapshot.key;
-            const data = childSnapshot.val();
-            fetchedNews.push({ id: key, ...data });
-          });
-          setNews(fetchedNews);
-        } else {
-          console.log('No data available in News');
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
 
   useEffect(() => {
     // Filter news based on the query
@@ -44,10 +16,7 @@ function NewsComponent() {
     setFilteredNews(results);
   }, [query, news]);
 
-  const clearInput = () => {
-    setQuery('');
-    setFilteredNews([]);
-  };
+  
   //---------show more - show less --------
   const total = news.length;
   // State ban đầu dựa trên kích thước màn hình
@@ -89,48 +58,7 @@ function NewsComponent() {
 
   return (
     <div>
-      {/* <div className="relative my-4 flex items-center">
-        <input
-          type="text"
-          value={query}
-          onChange={handleSearchChange}
-          placeholder="Tìm kiếm tin tức..."
-          className="w-full p-3 border-none focus:outline-none rounded-l text-gray-700 "
-        />
-        {query && (
-          <div className="bg-white p-3">
-            <svg
-              onClick={clearInput}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="w-6 h-6 text-gray-500"
-            >
-              <path
-                fillRule="evenodd"
-                d="M8.707 10l-3.147 3.146a.5.5 0 0 0 .708.708L10 10.707l3.146 3.147a.5.5 0 0 0 .708-.708L10.707 10l3.147-3.146a.5.5 0 0 0-.708-.708L10 9.293 6.854 6.146a.5.5 0 0 0-.708.708L9.293 10z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </div>
-        )}
-        <div className="py-3 px-10 bg-yellow-600 text-white rounded-r">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6 "
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
-        </div>
-      </div> */}
+      
 
       <div className="grid md:grid-cols-3 sm:grid-cols-2 pm:grid-cols-1 gap-5 font-inter">
         {filteredNews.slice(0, visibleItems).map((item, index) => (
@@ -159,7 +87,7 @@ function NewsComponent() {
         ))}
       </div>
 
-      {/* <div className="mt-10">
+      <div className="mt-10">
       <button onClick={handleViewToggle}
      className={`cursor-pointer relative lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-white rounded-lg transition-all bg-yellow-600
     duration-1000 ease-in-out inline-block overflow-hidden capitalize shadow-md hover:bg-transparent hover:text-yellow-600
@@ -167,7 +95,7 @@ function NewsComponent() {
 before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear ${total<7 ? 'hidden' : "block"}`}>
 {visibleItems === total ? 'Ẩn Bớt' : 'Xem Thêm'}
           </button>
-      </div> */}
+      </div>
     </div>
   );
 }

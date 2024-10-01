@@ -1,48 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
+import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
 
 import { Link } from 'react-router-dom';
 
 function NewsComponent() {
 
-    const [news, setNews] = useState([])
+  const { data: news} = useFirestoreCollection('News',4);
+
     const [filteredNews, setFilteredNews] = useState([]);
     const [query, setQuery] = useState('');
 
     const handleSearchChange = (event) => {
       setQuery(event.target.value.toLowerCase());
     };
-    
-
-    useEffect(() => {
-      const fetchData = async () => {
-        const db = getFirestore();
-        const newsCollection = collection(db, 'News'); // Thay đổi 'sliders' thành collection của bạn
-        
-        try {
-          const snapshot = await getDocs(newsCollection);
   
-          if (!snapshot.empty) {
-            const fetchedMedia = [];
-            snapshot.forEach(doc => {
-              const key = doc.id;
-              const data = doc.data();
-              fetchedMedia.push({ id: key, ...data });
-              
-            });
-  
-            setNews(fetchedMedia);
-          } else {
-            console.log("No data available");
-          }
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-  
-      fetchData();
-    }, []); 
-
     useEffect(() => {
       // Filter news based on the query
       const results = news.filter(newsItem =>

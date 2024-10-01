@@ -5,85 +5,81 @@ import FormAddNews from './FormAddNews';
 import ReactPaginate from 'react-paginate';
 
 function NewsTable() {
-  const [showForm, setShowForm] = useState(false); // useState hook để lưu trữ trạng thái hiển thị (mặc định là false)
+ 
 
-  const handleClick = () => {
-    setShowForm(!showForm); // Thay đổi trạng thái hiển thị khi click
-  };
+    // select database
+    const [news, setNews] = useState([]);
+    const [filteredNews, setFilteredNews] = useState([]);
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
 
-  // select database
-  const [news, setNews] = useState([]);
-  const [filteredNews, setFilteredNews] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
 
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filteredNews.slice(indexOfFirstItem, indexOfLastItem);
+    const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
+    const firstItemRank = ((currentPage - 1) * itemsPerPage) + 1;
 
-  const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
-  const firstItemRank = ((currentPage - 1) * itemsPerPage) + 1;
+    useEffect(() => {
+      const dbRef = ref(getDatabase());
 
-  useEffect(() => {
-    const dbRef = ref(getDatabase());
-
-    get(child(dbRef, `du-an`))
-      .then((snapshot) => {
-        if (snapshot.exists()) {
-          const fetchedNews = Object.entries(snapshot.val()).map(([id, value]) => ({
-            ...value,
-            id, // đây là ID từ Firebase
-            createdAt: new Date(value.createdAt).toLocaleString()
-          }));
-          setNews(fetchedNews);
-        } else {
-          console.log("No data available in News");
-        }
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+      get(child(dbRef, `du-an`))
+        .then((snapshot) => {
+          if (snapshot.exists()) {
+            const fetchedNews = Object.entries(snapshot.val()).map(([id, value]) => ({
+              ...value,
+              id, // đây là ID từ Firebase
+              createdAt: new Date(value.createdAt).toLocaleString()
+            }));
+            setNews(fetchedNews);
+          } else {
+            console.log("No data available in News");
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    }, []);
 
 
-  const [query, setQuery] = useState('');
+    const [query, setQuery] = useState('');
 
 
-  useEffect(() => {
-    const results = news.filter(item =>
-      item.title.toLowerCase().includes(query)
-    );
-    setFilteredNews(results);
-    if (currentPage > Math.ceil(results.length / itemsPerPage)) {
-      setCurrentPage(Math.ceil(results.length / itemsPerPage) || 1);
-    }
-  }, [query, news]);
+    useEffect(() => {
+      const results = news.filter(item =>
+        item.title.toLowerCase().includes(query)
+      );
+      setFilteredNews(results);
+      if (currentPage > Math.ceil(results.length / itemsPerPage)) {
+        setCurrentPage(Math.ceil(results.length / itemsPerPage) || 1);
+      }
+    }, [query, news]);
 
-  // Pagination handler
-  const handlePageClick = (event) => {
-    setCurrentPage(event.selected + 1);
-  };
-  const handleEditNews = (newsId) => {
-    const item = news.find(item => item.id === newsId);
-    if (item) {
-      // Set the current item to the one to be edited
-      setShowForm(true); // Show the form
-    }
-  };
-  const handleDeleteNews = (newsId) => {
-    const db = getDatabase();
-    const newsRef = ref(db, `News/${newsId}`);
-  
-    remove(newsRef)
-      .then(() => {
-        console.log(`News item with ID: ${newsId} has been deleted.`);
-        // Cập nhật state nếu cần
-        setNews((currentNews) => currentNews.filter((item) => item.id !== newsId));
-      })
-      .catch((error) => {
-        console.error("Error deleting news item:", error);
-      });
-  };
+    // Pagination handler
+    const handlePageClick = (event) => {
+      setCurrentPage(event.selected + 1);
+    };
+    const handleEditNews = (newsId) => {
+      const item = news.find(item => item.id === newsId);
+      if (item) {
+        // Set the current item to the one to be edited
+        setShowForm(true); // Show the form
+      }
+    };
+    const handleDeleteNews = (newsId) => {
+      const db = getDatabase();
+      const newsRef = ref(db, `News/${newsId}`);
+    
+      remove(newsRef)
+        .then(() => {
+          console.log(`News item with ID: ${newsId} has been deleted.`);
+          // Cập nhật state nếu cần
+          setNews((currentNews) => currentNews.filter((item) => item.id !== newsId));
+        })
+        .catch((error) => {
+          console.error("Error deleting news item:", error);
+        });
+    };
 
   return (
     <div className="mt-12 mb-8 flex flex-col gap-4">

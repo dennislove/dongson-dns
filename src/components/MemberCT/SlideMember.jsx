@@ -1,42 +1,15 @@
 import React, { useEffect, useState,useRef } from 'react';
 import '../MemberCT/style.css'
-import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
+import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
 
 function SlideMember() {
    
-    // const members = data.datamember
-    const [members, setMembers] = useState([])
+  const { data: members} = useFirestoreCollection('Members',8);
+  
     const [activeTab, setActiveTab] = useState(1);
     const intervalRef = useRef(null);
   
-    useEffect(() => {
-      const fetchData = async () => {
-        const db = getFirestore();
-        const membersCollection = collection(db, 'Members');
-        
-        try {
-          const snapshot = await getDocs(membersCollection);
-  
-          if (!snapshot.empty) {
-            const fetchedMedia = [];
-            snapshot.forEach(doc => {
-              const key = doc.id;
-              const data = doc.data();
-              fetchedMedia.push({ id: key, ...data });
-            });
-  
-            setMembers(fetchedMedia);
-          } else {
-            console.log("No data available");
-          }
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-  
-      fetchData();
-    }, []); 
-  
+ 
   useEffect(() => {
     intervalRef.current = setInterval(() => {
       setActiveTab((prevActiveTab) => (prevActiveTab + 1) % members.length);

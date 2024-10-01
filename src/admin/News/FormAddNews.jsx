@@ -24,7 +24,6 @@ function FormAddNews() {
 
     const [title, setTitle] = useState('');
     const [slug, setSlug] = useState('');
-    const [brand, setBrand] = useState('');
     const [descriptions, setDescriptions] = useState([{ desc: '' }]);
     const [image, setImage] = useState("");
 

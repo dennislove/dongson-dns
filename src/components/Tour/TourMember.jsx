@@ -1,5 +1,5 @@
 import React from 'react'
-import data from '../../assets/data.json'
+import data from '../../data.json'
 
 function TourMember() {
     const tourmembers = data.tourmember

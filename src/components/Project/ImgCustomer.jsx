@@ -1,64 +1,10 @@
-import React, { useEffect, useState,useRef } from 'react';
+import React from 'react';
 
-import { getDatabase, ref, child, get } from "firebase/database";
-import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
+import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
 
 function ImgCustomer() {
 
-  const [customers, setCustomers] = useState([])
-
-  // useEffect(() => {
-  //   const dbRef = ref(getDatabase());
-
-  //   get(child(dbRef, `Customers`))
-  //     .then((snapshot) => {
-  //       if (snapshot.exists()) {
-  //         const fetchedMedia = [];
-  //         const initialStates = {};
-  //         snapshot.forEach(childSnapshot => {
-  //           const key = childSnapshot.key;
-  //           const data = childSnapshot.val();
-  //           fetchedMedia.push({ id: key, ...data });
-  //           initialStates[key] = { isPlaying: false, ref: React.createRef() }; 
-  //         });
-  //         setCustomers(fetchedMedia);
-  //       } else {
-  //         console.log("No data available");
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  // }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const db = getFirestore();
-      const customersCollection = collection(db, 'Customers'); // Thay đổi 'sliders' thành collection của bạn
-      
-      try {
-        const snapshot = await getDocs(customersCollection);
-
-        if (!snapshot.empty) {
-          const fetchedMedia = [];
-          snapshot.forEach(doc => {
-            const key = doc.id;
-            const data = doc.data();
-            fetchedMedia.push({ id: key, ...data });
-            
-          });
-
-          setCustomers(fetchedMedia);
-        } else {
-          console.log("No data available");
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []); 
+  const { data: customers} = useFirestoreCollection('Customers', 18);
 
   return (
     <div className='grid  mt-6 lg:px-0 pm:px-10

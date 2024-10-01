@@ -1,16 +1,17 @@
 import React from 'react';
-import data from '../../assets/data.json'
+import data from '../../data.json'
 
 function Media() {
   const images = data.imageMedia
+  // const { data: members} = useFirestoreCollection('Members');
   
       return (
-        <div className='max-w-[1300px] m-auto mt-5'>
+        <div className='max-w-[1300px] mx-auto mt-5'>
           
           <div className=' relative'>
            
                  
-                <div className="flex gap-5 -ml-10 overflow-x-auto w-full relative overflow-hidden md:snap-none scroll-smooth scrollbar lg:snap-x"> 
+                <div className="flex gap-5 overflow-x-auto w-full relative overflow-hidden md:snap-none scroll-smooth scrollbar lg:snap-x"> 
                   <div className=' flex flex-row gap-10 w-full ' >
                     
                     {images.map((image) => (
