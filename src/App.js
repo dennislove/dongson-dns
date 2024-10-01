@@ -2,7 +2,7 @@
 import React, { Fragment } from 'react'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import {routes} from './routes'
+import {routes} from './routes/indexRoute'
 import DefautComponent from './components/DefautComponent/DefautComponent';
 
 // Import the functions you need from the SDKs you need

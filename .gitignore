@@ -6,6 +6,7 @@
 .pnp.js
 firebaseConfig.js
 data.json
+indexRoute.js
 # testing
 /coverage
 
