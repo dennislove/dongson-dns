@@ -1,41 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import '../Service/style.css'
-import { getDatabase, ref, child, get } from "firebase/database";
-import { collection,getFirestore, getDocs, query } from 'firebase/firestore';
+import { collection, getFirestore, getDocs, query } from 'firebase/firestore';
 
 function Slider() {
-    // const sliders = data.slider;
     const [sliders, setSliders] = useState([]);
     const [currentSlide, setCurrentSlide] = useState(0);
     const [slideDirection, setSlideDirection] = useState("");
     const [transform, setTransform] = useState("")
     const [thumbnailOrder, setThumbnailOrder] = useState([]);
    
-    // useEffect(() => {
-    //     const dbRef = ref(getDatabase());
-    
-    //     get(child(dbRef, `sliders`))
-    //       .then((snapshot) => {
-    //         if (snapshot.exists()) {
-    //           const fetchedMedia = [];
-    //           const initialStates = {};
-    //           snapshot.forEach(childSnapshot => {
-    //             const key = childSnapshot.key;
-    //             const data = childSnapshot.val();
-    //             fetchedMedia.push({ id: key, ...data });
-    //             initialStates[key] = { isPlaying: false, ref: React.createRef() }; // Initialize state and ref for each video
-    //           });
-    //           setSliders(fetchedMedia);
-    //           setThumbnailOrder(fetchedMedia.map((_, index) => index));
-    //         } else {
-    //           console.log("No data available");
-    //         }
-    //       })
-    //       .catch((error) => {
-    //         console.error(error);
-    //       });
-    //   }, []);
-
+   
     useEffect(() => {
         const fetchData = async () => {
           const db = getFirestore();

@@ -10,7 +10,7 @@ function Project() {
             <div className='mb-5 text-center '>
                 <h2 className='  font-normal text-[40px] text-white capitalize'>Dự án</h2>
             </div>
-          {/* <div className=' text-xl bg-yellow-500 px-10 py-4 rounded-lg font-normal m-auto text-white'>Chuẩn Bị Ra Mắt</div> */}
+         
           <NewsComponent/>
         </div>
         </div>

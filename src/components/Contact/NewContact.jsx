@@ -114,9 +114,7 @@ function NewContact() {
                 </div>
              </div>
 
-          {/* <div className='w-full border mt-5 border-[#cbd5e1] rounded-xl focus:text-white focus:border-yellow-600'>
-            <input className='w-full bg-transparent py-4 px-6 text-yellow-50 focus:outline-none' type='file' name='file' accept='.jpg, .jpeg, .png, .pdf, .docs, .doc' />
-          </div> */}
+        
           <div className='mt-5'>
             
             <button onClick={handleSendEmail} value="Send"  className="px-8 py-4 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 

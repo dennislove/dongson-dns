@@ -3,10 +3,9 @@ import React, { useState, useEffect } from 'react';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Improved visibility logic considering different scroll positions
   const handleScroll = () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    setIsVisible(scrollTop > 100); // Adjust threshold as needed
+    setIsVisible(scrollTop > 100); 
   };
 
   useEffect(() => {

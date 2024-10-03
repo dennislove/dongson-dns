@@ -19,7 +19,7 @@ const PageTitleManager = () => {
       let title = '404'; // Tiêu đề mặc định khi không khớp bất kỳ đường dẫn nào
 
       // Kiểm tra xem có khớp với bất kỳ đường dẫn nào trong titleMap không
-      //'/dich-vu/ads' || '/dich-vu/payment'||
+     
       for (let path in titleMap) {
         const matcher = match(path, {
           decode: decodeURIComponent,

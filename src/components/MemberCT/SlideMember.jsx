@@ -33,9 +33,7 @@ function SlideMember() {
             <ul className="testimonialBodyList text-white ">
                 {members.map((item, index) =>(
                     <li key={index} className={`testimonialBodyItem  ${activeTab === index ? 'active' : ''}`} data-tab={item.id}>
-                    {/* <div className="testimonialRate text-yellow-600">Vị trí:<span className='text-white'>{item.location}</span>
-                        
-                    </div> */}
+                   
                     <p className='testimonialContent text-yellow-600 sm:text-2xl pm:text-xl  font-bold'>Phương châm làm nghề</p>
                     <p className="testimonialContent text-white text-xl mt-3">
                         {item.title} 

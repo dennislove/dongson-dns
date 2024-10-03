@@ -6,14 +6,13 @@ const useFirestoreCollection = (collectionName, fetchLimit) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Sử dụng useMemo để tạo ra tham chiếu mới cho Firestore collection khi collectionName thay đổi
+  // tạo ra tham chiếu mới cho Firestore collection khi collectionName thay đổi
   const db = useMemo(() => getFirestore(), []);
   const collectionRef = useMemo(() => collection(db, collectionName), [db, collectionName]);
 
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);  // Kích hoạt trạng thái loading
-
+      setLoading(true); 
       try {
         // Giới hạn số lượng tài liệu được tải
         const collectionQuery = query(collectionRef, limit(fetchLimit));
@@ -33,7 +32,7 @@ const useFirestoreCollection = (collectionName, fetchLimit) => {
         setError(error);
         console.error("Error fetching data:", error);
       } finally {
-        setLoading(false); // Tắt trạng thái loading khi hoàn tất
+        setLoading(false); 
       }
     };
 

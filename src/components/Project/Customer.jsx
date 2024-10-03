@@ -4,27 +4,23 @@ import Plx from "react-plx";
 
 function getDeviceDependentEndValue() {
   const windowWidth = window.innerWidth;
-
-  // Define breakpoints and corresponding start values (adjust as needed)
-  if (windowWidth >= 992) { // Large screens (lg)
-    return 1300; // Start scaling at the beginning (desktop)
-  } else if (windowWidth >= 768) { // Medium screens (md)
-    return 200; // Start scaling slightly later (tablet)
-  } else { // Small screens (sm, xs)
-    return 300; // Start scaling even later (mobile)
+  
+  if (windowWidth >= 992) { 
+    return 1300; //  (desktop)
+  } else if (windowWidth >= 768) { // (md)
+    return 200; //  (tablet)
+  } else { //  (sm, xs)
+    return 300; // (mobile)
   }
 }
 
 function getDeviceDependentStartScale() {
   const windowWidth = window.innerWidth;
-
-  // Define breakpoints and corresponding start values (adjust as needed)
-  if (windowWidth >= 992) { // Large screens (lg)
-    return 0.5; // Start scaling at the beginning (desktop)
-  } else if (windowWidth >= 768) { // Medium screens (md)
-    return 0.5; // Start scaling slightly later (tablet)
-  } else { // Small screens (sm, xs)
-    return 0.8; // Start scaling even later (mobile)
+  
+  if (windowWidth >= 992) { 
+    return 0.5; //  (desktop)
+  } else { //  (sm, xs)
+    return 0.8; // (mobile)
   }
 }
 

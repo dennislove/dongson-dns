@@ -3,9 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import { getDatabase, ref, child, get } from "firebase/database";
 import Footer from '../../components/Footer/Footer';
 
+
 const DetailNewsPage = () => {
     const { slug } = useParams();
-    const [newsDetail, setNewsDetail] = useState(null);
+  const [newsDetail, setNewsDetail] = useState(null);
 
     useEffect(() => {
         const dbRef = ref(getDatabase());
@@ -17,7 +18,7 @@ const DetailNewsPage = () => {
                 const data = childSnapshot.val();
                 if (data.slug === slug) {
                     setNewsDetail(data);
-                    return; // Break out of forEach loop since we found our item
+                    return; 
                 }
               });
             } else {
@@ -32,7 +33,7 @@ const DetailNewsPage = () => {
     if (!newsDetail) {
         return <div>Loading...</div>;
     }
- // Function to render descriptions
+ // render descriptions
  const renderDescriptions = () => {
   const descriptionsArray = [];
   // Loop through all keys in the newsDetail object
@@ -48,7 +49,7 @@ const DetailNewsPage = () => {
   return descriptionsArray;
 };
 
- // Function to render images
+ // render images
  const renderImages = () => {
   const imagesArray = [];
   // Loop through all keys in the newsDetail object

@@ -49,7 +49,6 @@ const clearInput = () => {
           setVisibleItems(newItemsPerPage);
       };
 
-      // Thêm event listener
       window.addEventListener('resize', handleResize);
 
       // Cleanup function

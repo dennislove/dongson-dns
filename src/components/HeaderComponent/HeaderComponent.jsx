@@ -5,8 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import data from '../../data.json'
 import clsx from 'clsx';
 import {  ref, getDownloadURL } from "firebase/storage";
-import { match } from 'path-to-regexp';  // Import match from path-to-regexp
-
+import { match } from 'path-to-regexp'; 
 import { storage } from '../../App.js';
 
 const NavItem = ({ children, href,id }) => {
@@ -124,7 +123,7 @@ function HeaderComponent() {
                 {headerList.map(item =>(
                              <li key={item.id} className=' w-full font-inter uppercase cursor-pointer'>
                                 <a  href={item.path} className=' items-center py-3 block border-b border-[#f2f2f2]'>{item.name}</a>
-                                {/* <div className='bg-[#f2f2f2] h-[1px] w-full mt-2'></div> */}
+                              
                               </li>
                      ))}
                 </ul>
