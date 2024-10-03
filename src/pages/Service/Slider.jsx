@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../Service/style.css'
-import { collection, getFirestore, getDocs, query } from 'firebase/firestore';
+import { collection, getFirestore, getDocs } from 'firebase/firestore';
 
 function Slider() {
     const [sliders, setSliders] = useState([]);
@@ -13,7 +13,7 @@ function Slider() {
     useEffect(() => {
         const fetchData = async () => {
           const db = getFirestore();
-          const slidersCollection = collection(db, 'sliders'); // Thay đổi 'sliders' thành collection của bạn
+          const slidersCollection = collection(db, 'sliders'); 
           
           try {
             const snapshot = await getDocs(slidersCollection);
@@ -26,7 +26,7 @@ function Slider() {
                 const key = doc.id;
                 const data = doc.data();
                 fetchedMedia.push({ id: key, ...data });
-                initialStates[key] = { isPlaying: false, ref: React.createRef() }; // Initialize state and ref for each video
+                initialStates[key] = { isPlaying: false, ref: React.createRef() }; 
               });
     
               setSliders(fetchedMedia);

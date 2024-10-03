@@ -121,7 +121,7 @@ function NewsTable() {
                   {item.createdAt}
                 </td>
                 <td className="py-4 px-6 flex">
-                  <h2 onClick={() => handleEditNews(item.id)} className="font-medium cursor-pointer text-blue-600 dark:text-blue-500 hover:underline">Edit</h2>
+                  
                   <h2 onClick={() => handleDeleteNews(item.id)} className="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline ml-4">Delete</h2>
                 </td>
               </tr>
