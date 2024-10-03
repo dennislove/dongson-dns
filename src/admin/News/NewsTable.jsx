@@ -59,13 +59,7 @@ function NewsTable() {
     const handlePageClick = (event) => {
       setCurrentPage(event.selected + 1);
     };
-    const handleEditNews = (newsId) => {
-      const item = news.find(item => item.id === newsId);
-      if (item) {
-        // Set the current item to the one to be edited
-        setShowForm(true); // Show the form
-      }
-    };
+  
     const handleDeleteNews = (newsId) => {
       const db = getDatabase();
       const newsRef = ref(db, `News/${newsId}`);
