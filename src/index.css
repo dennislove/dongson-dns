@@ -4,8 +4,8 @@
 @layer base{
   @font-face {
     font-family: 'SVN-Hemi Head';
-    src: url('/src/assets/SVN-Hemi-Head.woff') format('woff') format('woff'),
-        url('/src/assets/SVN-Hemi-Head.woff2') format('woff2');
+    src: url('../public/assets/SVN-Hemi-Head.woff') format('woff') format('woff'),
+        url('../public/assets/SVN-Hemi-Head.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }

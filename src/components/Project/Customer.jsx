@@ -2,42 +2,15 @@ import React from 'react'
 import ImgCustomer from './ImgCustomer'
 import Plx from "react-plx";
 
-function getDeviceDependentEndValue() {
-  const windowWidth = window.innerWidth;
-  
-  if (windowWidth >= 992) { 
-    return 1300; //  (desktop)
-  } else if (windowWidth >= 768) { // (md)
-    return 200; //  (tablet)
-  } else { //  (sm, xs)
-    return 300; // (mobile)
-  }
-}
-
-function getDeviceDependentStartScale() {
-  const windowWidth = window.innerWidth;
-  
-  if (windowWidth >= 992) { 
-    return 0.5; //  (desktop)
-  } else { //  (sm, xs)
-    return 0.8; // (mobile)
-  }
-}
+import { getDeviceDependentEndValue, getDeviceDependentStartScale } from '../../utils/screen';
+import { createParallaxData } from '../../utils/parallaxData';
 
 function Customer() {
-  const parallaxData = [
-    {
-      start: 0,
-      end: getDeviceDependentEndValue(),
-      properties: [
-        {
-          startValue: getDeviceDependentStartScale(),
-          endValue: 1,
-          property: "scale",
-        },
-      ],
-    },
-  ];
+  const endValue = getDeviceDependentEndValue(1300);
+  const startScale = getDeviceDependentStartScale();
+  
+  const parallaxData = createParallaxData(endValue, startScale);
+ 
   return (
     <div className='relative text-center mb-10'>
     <div className='mb-5 text-center'>

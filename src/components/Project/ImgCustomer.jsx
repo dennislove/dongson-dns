@@ -1,6 +1,6 @@
 import React from 'react';
 
-import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
+import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 function ImgCustomer() {
 

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ItemVideo from './ItemVideo';
-import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
+import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 const VideoClip = () => {
   const { data: videos} = useFirestoreCollection('Video',3);

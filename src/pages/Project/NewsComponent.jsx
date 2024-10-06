@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import useRealtimeDatabase from '../../Hooks/useRealtimeDatabase';
+import useRealtimeDatabase from '../../hooks/useRealtimeDatabase';
 
 function NewsComponent() {
   const { data: news} = useRealtimeDatabase('du-an');

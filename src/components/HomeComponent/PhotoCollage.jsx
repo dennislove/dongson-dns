@@ -2,82 +2,20 @@ import React from 'react';
 import CountUp from "react-countup";
 import Plx from "react-plx";
 
-function getDeviceDependentEndValue() {
-  const windowWidth = window.innerWidth;
- 
-  if (windowWidth >= 992) { 
-    return 600; //  (desktop)
-  } else if (windowWidth >= 768) { // (md)
-    return 200; //  (tablet)
-  } else { //  (sm, xs)
-    return 300; // (mobile)
-  }
-}
+import { getDeviceDependentStartScale,getDeviceDependentStartScaleRight ,getDeviceDependentEndValue} from '../../utils/screen';
+import { createParallaxDataCollage } from '../../utils/parallaxData';
 
-function getDeviceDependentStartScale() {
-  const windowWidth = window.innerWidth;
-
-  // Define breakpoints and corresponding start values (adjust as needed)
-  if (windowWidth >= 992) { // Large screens (lg)
-    return -200; // Start scaling at the beginning (desktop)
-  } else if (windowWidth >= 768) { // Medium screens (md)
-    return -100; // Start scaling slightly later (tablet)
-  } else { // Small screens (sm, xs)
-    return -100; // Start scaling even later (mobile)
-  }
-}
-
-function getDeviceDependentStartScaleRight() {
-    const windowWidth = window.innerWidth;
-  
-    // Define breakpoints and corresponding start values (adjust as needed)
-    if (windowWidth >= 992) { // Large screens (lg)
-      return 200; // Start scaling at the beginning (desktop)
-    } else if (windowWidth >= 768) { // Medium screens (md)
-      return 100; // Start scaling slightly later (tablet)
-    } else { // Small screens (sm, xs)
-      return 170; // Start scaling even later (mobile)
-    }
-  }
 
 function PhotoCollage() {
-    const parallaxData = [
-        {
-          start: 0,
-          end: getDeviceDependentEndValue(),
-          properties: [
-            {
-              startValue: getDeviceDependentStartScale(),
-              endValue: 0,
-                  property: "translateX",
-              },
-              {
-                startValue: 0,
-                endValue: 1,
-                    property: "opacity",
-              },
-          ],
-        },
-    ];
-    const parallaxDataRight = [
-        {
-          start: 0,
-          end: getDeviceDependentEndValue(),
-          properties: [
-            {
-              startValue: getDeviceDependentStartScaleRight(),
-              endValue: 0,
-                  property: "translateX",
-              },
-              {
-                startValue: 0,
-                endValue: 1,
-                    property: "opacity",
-              },
-          ],
-        },
-      ];
-  return (
+
+  const endValue = getDeviceDependentEndValue(600);
+  const startScale = getDeviceDependentStartScale();
+  const startScale2 = getDeviceDependentStartScaleRight();
+  
+  const parallaxData = createParallaxDataCollage(endValue, startScale);
+  const parallaxData2 = createParallaxDataCollage(endValue, startScale2);
+ 
+ return (
     <div className='grid font-inter md:grid-cols-2 sm:grid-cols-1 gap-10 max-w-[1300px] m-auto relative  p-10'>
          <div className='block text-white'>
                      <Plx className="MyAwesomeParallax" parallaxData={parallaxData}>
@@ -90,7 +28,7 @@ function PhotoCollage() {
                         
                 </div>
         <div className='grid grid-cols-1'>
-           <Plx className="MyAwesomeParallax" parallaxData={parallaxDataRight}>
+           <Plx className="MyAwesomeParallax" parallaxData={parallaxData2}>
                 <section className=' border-b grid grid-cols-2 '>
                     <div className='py-8 px-10 border-r text-yellow-600 text-center'><CountUp end={8} className=" md:text-[60px] sm:text-[40px] pm:text-3xl font-semibold " /> <span className='md:text-[60px] sm:text-[40px] pm:text-3xl font-semibold text-white text-center'>+</span>
                         <p className=' uppercase mt-3 font-normal md:text-xl pm:text-sm'>Năm Kinh Nghiệm</p>

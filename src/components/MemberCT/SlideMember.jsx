@@ -1,6 +1,6 @@
 import React, { useEffect, useState,useRef } from 'react';
 import '../MemberCT/style.css'
-import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
+import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 function SlideMember() {
    

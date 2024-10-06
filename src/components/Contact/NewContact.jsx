@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import EmailSentNotification from './EmailSentNotification';
 import ContactMap from './ContactMap';
 import FormInput from './FormInput';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function NewContact() {
+  const notify = () => toast.success("Email của bạn đã được gửi thành công!");
   const inputs = [
     {
       id: 1,
@@ -65,7 +67,7 @@ function NewContact() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    notify()
     emailjs
       .sendForm('service_dongson', 
       'template_mam00r3',
@@ -124,7 +126,7 @@ function NewContact() {
             GỬI ĐI
             </button>
         </div>
-        {isSent && <EmailSentNotification />}
+        {isSent && <ToastContainer/>}
           </form>
         </div>
        <ContactMap/>

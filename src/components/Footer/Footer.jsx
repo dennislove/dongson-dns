@@ -1,14 +1,13 @@
 import React from 'react'
-import logo from '../../images/logo.jpg'
 import LinkNow from './LinkNow'
 
 function Footer() {
   return (
-    <div className='bg-[url(images/banner3.png)] object-fill bg-cover pt-10 bg-[#000022] pb-10  '>
+    <div className='bg-[url("/public/images/banner3.png")] object-fill bg-cover pt-10 bg-[#000022] pb-10  '>
       <div className='max-w-[1300px]  lg:m-auto md:mx-10 sm:mx-8 pm:mx-5 relative'>
         <div className=' justify-between mb-10  sm:flex pm:block'>
           <div className=' mx-auto  md:w-[20%] sm:w-[30%] pm:w-full mb-10'> 
-          <img loading='lazy' src={logo} alt="logo-DNS" className='text-white text-xs text-center w-28 h-28 rounded-full'/>
+          <img loading='lazy' src="/images/logo.jpg" alt="logo-DNS" className='text-white text-xs text-center w-28 h-28 rounded-full'/>
           <h2 className=' uppercase text-yellow-600  text-base'> Đông sơn events & travels</h2>
           <h2 className='text-sm text-white font-inter'>Giới hạn là bầu trời</h2>
           </div>

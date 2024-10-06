@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import useFirestoreCollection from '../../Hooks/useFirestoreCollection';
+import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 import { Link } from 'react-router-dom';
 

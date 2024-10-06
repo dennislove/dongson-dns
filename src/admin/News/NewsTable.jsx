@@ -5,8 +5,6 @@ import FormAddNews from './FormAddNews';
 import ReactPaginate from 'react-paginate';
 
 function NewsTable() {
- 
-
     // select database
     const [news, setNews] = useState([]);
     const [filteredNews, setFilteredNews] = useState([]);

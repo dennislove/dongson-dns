@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from 'react'
-import logo from '../../images/logo.jpg'
 import { Link, useLocation } from 'react-router-dom';
 import data from '../../data.json'
 import clsx from 'clsx';
@@ -82,7 +81,7 @@ function HeaderComponent() {
                     </button>
                   {/* logo */}
                     <a href='/' >
-                  <img src={logo} alt="logo-DNS" loading='lazy'
+                  <img src='/images/logo.jpg' alt="logo-DNS" loading='lazy'
                   className='rounded-full text-white md:h-20 pm:h-16 border-2 border-yellow-600 '/>
                   </a>
               
@@ -118,7 +117,7 @@ function HeaderComponent() {
                   </svg>
                   </div>
     
-                  <img src={logo} alt="logo-DNS" loading='lazy' className='mx-auto rounded-full  pm:h-20 border-2 border-yellow-600'/>
+                  <img src='/images/logo.jpg' alt="logo-DNS" loading='lazy' className='mx-auto rounded-full  pm:h-20 border-2 border-yellow-600'/>
                   <ul className='mt-2'>
                 {headerList.map(item =>(
                              <li key={item.id} className=' w-full font-inter uppercase cursor-pointer'>

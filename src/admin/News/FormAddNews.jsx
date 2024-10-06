@@ -75,11 +75,6 @@ const handleDeleteDescription = () => {
     const snapshot = await uploadBytes(imageRef, image);
     const imageUrl = await getDownloadURL(snapshot.ref);
 
-    // Lấy giá trị counter hiện tại và tính ID tiếp theo
-  // const counterRef = ref(database, 'News/counter');
-  // const counterSnapshot = await get(counterRef);
-  // const nextId = (counterSnapshot.exists() ? counterSnapshot.val() : 0) + 1;
-
     const newsRef = push(ref(database, 'du-an'));
     set(newsRef, {
       title: title,
