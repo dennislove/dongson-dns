@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import '../Service/style.css'
-import { collection, getFirestore, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, orderBy } from 'firebase/firestore';
 
 function Slider() {
     const [sliders, setSliders] = useState([]);
@@ -10,12 +10,18 @@ function Slider() {
     const [thumbnailOrder, setThumbnailOrder] = useState([]);
    
    
+    const db = useMemo(() => getFirestore(), []);
+    const collectionRef = useMemo(() => collection(db, "sliders"), [db, "sliders"]);
+
     useEffect(() => {
         const fetchData = async () => {
-          const db = getFirestore();
-          const slidersCollection = collection(db, 'sliders'); 
-          
-          try {
+      
+            try {
+                const slidersCollection = query(
+                    collectionRef, 
+                    
+                    orderBy('name', 'asc') 
+                  );
             const snapshot = await getDocs(slidersCollection);
     
             if (!snapshot.empty) {
@@ -61,9 +67,9 @@ function Slider() {
     const moveThumbnailToEnd = (index) => {
         setThumbnailOrder(prevOrder => {
             const temp = prevOrder[0];
-            console.log(temp)
+            // console.log(temp)
             const newOrder = prevOrder.slice(1).concat(temp);
-            console.log(newOrder)
+            // console.log(newOrder)
             const currentIndex = newOrder.indexOf(index);
             newOrder.unshift(newOrder.splice(currentIndex, 1)[0]);
             return newOrder;

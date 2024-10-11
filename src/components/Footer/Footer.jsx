@@ -1,7 +1,46 @@
 import React from 'react'
 import LinkNow from './LinkNow'
-
+import { HiMapPin, HiPhone, HiEnvelope } from "react-icons/hi2";
+function Tags() {
+  const itemTags = [
+    {
+      icon: <HiMapPin size={34} color='white'/>,
+      name: "72 đường Tống Duy Tân, P.Bắc Sơn, TP Sầm Sơn, tỉnh Thanh Hóa",
+      topic:"Địa chỉ"
+    },
+    {
+      icon: <HiPhone size={30} color='white'/>,
+      name: "0983.378.939",
+      name2: "0971.729.698",
+      topic:"Hotline"
+    },
+    {
+      icon: <HiEnvelope size={30} color='white'/>,
+      name: "dongsonevent.travel@gmail.com",
+      topic:"Email"
+    }
+  ]
+  return (
+    <div className='grid gap-10  md:grid-cols-3 sm:grid-cols-1 pm:grid-cols-1 font-inter'>
+      {
+        itemTags.map((item, index) => (
+          <div className='px-4 py-5 bg-yellow-600  flex gap-5  items-center rounded-md' key={index}>
+          {item.icon}
+      <div className='text-white'>
+          <h2 className=' uppercase font-semibold '>{item.topic}</h2>
+          <div className=' flex flex-col'>
+                <span>{ item.name}</span>
+                <span>{ item.name2}</span>
+              </div>
+      </div>
+    </div>
+      ))}
+    </div>
+    
+  )
+}
 function Footer() {
+  const services = ["Media quay chụp","Nhà rạp không gian","Âm thanh, ánh sáng","Màn hình LED","Sân khấu sự kiện","Bộ gametool teambuilding"]
   return (
     <div className='bg-[url("/public/images/banner3.png")] object-fill bg-cover pt-10 bg-[#000022] pb-10  '>
       <div className='max-w-[1300px]  lg:m-auto md:mx-10 sm:mx-8 pm:mx-5 relative'>
@@ -35,13 +74,10 @@ function Footer() {
                     </div>
                   </div>
                 </li>
-                <li className=' uppercase text-white font-medium text-xl mb-10'>Dịch vụ
-                  <h4 className=' mt-4 text-sm  font-light '>Media quay chụp</h4>
-                  <h4 className=' mt-4 text-sm  font-light '>Nhà rạp không gian</h4>
-                  <h4 className=' mt-4 text-sm  font-light '>Âm thanh, ánh sáng</h4>
-                  <h4 className=' mt-4 text-sm  font-light '>Màn hình LED</h4>
-                  <h4 className=' mt-4 text-sm  font-light '>Sân khấu sự kiện</h4>
-                  <h4 className=' mt-4 text-sm  font-light '>Bộ gametool teambuilding</h4>
+              <li className=' uppercase text-white font-medium text-xl mb-10'>Dịch vụ
+                {services.map((item, index) => (
+                  <h4 key={index} className=' mt-4 text-sm  font-light '>{item}</h4>
+                ))}
                 </li>
                 <li className=' uppercase text-white font-medium text-xl'>Liên hệ ngay
                   <div className='mt-4'> <LinkNow/></div>
@@ -51,44 +87,8 @@ function Footer() {
               </ul>
           </div>
         </div>
-
-        <div className='grid gap-10  md:grid-cols-3 sm:grid-cols-1 pm:grid-cols-1 font-inter'>
-            <div className='px-4 py-5 bg-yellow-600  flex gap-5  items-center rounded-md'>
-            
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-20 h-20  lg:w-20 lg:h-20 md:w-20 md:h-20 sm:w-14 sm:h-14 pm:w-14 pm:h-14 text-white">
-    <path fillRule="evenodd" d="m11.54 22.351.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 1.144-.742 19.58 19.58 0 0 0 2.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 0 0-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 0 0 2.682 2.282 16.975 16.975 0 0 0 1.145.742ZM12 13.5a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" clipRule="evenodd" />
-  </svg>
-            
-          <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Địa chỉ</h2>
-            <span>72 đường Tống Duy Tân, P.Bắc Sơn, TP Sầm Sơn, 
-            tỉnh Thanh Hóa</span>
-          </div>
-            </div>
-            <div className='px-4 py-5 bg-yellow-600  flex items-center rounded-md gap-5'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-white">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
-</svg>
-
-          <div className='text-white'>
-            <h2 className=' uppercase font-semibold '>Hotline</h2>
-            <div className=' flex flex-col'>
-              <span>0983.378.939</span>
-              <span>0971.729.698</span>
-            </div>
-          </div>
-            </div>
-            <div className='px-4 py-5 bg-yellow-600  flex gap-5 items-center rounded-md'>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-white">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-</svg>
-
-          <div className='text-white '>
-            <h2 className=' uppercase font-semibold '>Email</h2>
-            <span>dongsonevent.travel@gmail.com</span>
-          </div>
-            </div>
-        </div>
+            <Tags/>
+      
         <h2 className='text-center font-sm text-white mt-10 font-inter'>2024 Copyright <span className='text-yellow-600'>Đông Sơn Events & Travels</span>. Designed by <span className='text-yellow-600'>dnsteam©</span></h2>
       </div>
     </div>

@@ -6,6 +6,8 @@ import clsx from 'clsx';
 import {  ref, getDownloadURL } from "firebase/storage";
 import { match } from 'path-to-regexp'; 
 import { storage } from '../../App.js';
+import Button from '../Button/Button.jsx';
+import { HiBars3CenterLeft, HiOutlineXMark  } from "react-icons/hi2";
 
 const NavItem = ({ children, href,id }) => {
     const location = useLocation();
@@ -75,9 +77,7 @@ function HeaderComponent() {
                   
                   {/* menu */}
                     <button className='md:hidden'  onClick={() => setMenu(true)} >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 text-yellow-600 " >
-                  <path fillRule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
-                </svg>
+                    <HiBars3CenterLeft color='#ca8a04' size={30} />
                     </button>
                   {/* logo */}
                     <a href='/' >
@@ -93,13 +93,8 @@ function HeaderComponent() {
                       ))}
                   </ul>
                   <div className=''>
-                  <button onClick={handleClick} className="font-inter lg:px-8 md:px-6 lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                      duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                      before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-                  before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-                  PROFILE
-                </button>
-           
+                 
+           <Button onClick={handleClick} name="PROFILE" />
               </div>
               </section>
       
@@ -112,9 +107,7 @@ function HeaderComponent() {
               >
                 <section className="text-black bg-white flex-col absolute left-0 top-0 h-screen p-8 gap-8 z-[50] pm:w-[65%] flex  ">
                   <div onClick={() => setMenu(false)} className="absolute right-1 top-1 p-1 bg-yellow-600  cursor-pointer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 ">
-                    <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 0 1 1.06 0L12 10.94l5.47-5.47a.75.75 0 1 1 1.06 1.06L13.06 12l5.47 5.47a.75.75 0 1 1-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 0 1-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
-                  </svg>
+                  <HiOutlineXMark size={30}/>
                   </div>
     
                   <img src='/images/logo.jpg' alt="logo-DNS" loading='lazy' className='mx-auto rounded-full  pm:h-20 border-2 border-yellow-600'/>
@@ -127,12 +120,7 @@ function HeaderComponent() {
                      ))}
                 </ul>
                 <div className=' mt-5' >
-                      <button onClick={handleClick}  className="font-inter lg:px-8 md:px-6  lg:py-4 md:py-2 pm:px-6 pm:py-2 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                          duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                          before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-                      before:bg-gradient-to-r before:from-transparent before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-                      PROFILE
-                      </button>
+                <Button onClick={handleClick} name="PROFILE" />
                   </div>
                 </section>
               </div>

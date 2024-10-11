@@ -4,6 +4,7 @@ import ContactMap from './ContactMap';
 import FormInput from './FormInput';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Button from '../Button/Button';
 
 function NewContact() {
   const notify = () => toast.success("Email của bạn đã được gửi thành công!");
@@ -28,7 +29,7 @@ function NewContact() {
     },
     {
       id: 3,
-      name: "user_add",
+      name: "user_addr",
       type: "text",
       placeholder: "Địa chỉ",
       errorMessage: "Vui lòng không bỏ trống",
@@ -60,7 +61,6 @@ function NewContact() {
     setValues({...values, [e.target.name]: e.target.value})
   }
  
-
   const [error, setError] = useState(false)
 
   const form = useRef();
@@ -100,6 +100,7 @@ function NewContact() {
             {inputs.map((input) =>(
                <FormInput key={input.id} {...input} value={values[input.name]} onChange={onChange}/>
               ))}
+               
              </div>
             {/* topic */}
               <div>
@@ -117,14 +118,9 @@ function NewContact() {
              </div>
 
         
-          <div className='mt-5'>
+              <div className='mt-5'>
+                <Button onClick={handleSendEmail} name="GỬI ĐI"/>
             
-            <button onClick={handleSendEmail} value="Send"  className="px-8 py-4 border-2 border-yellow-600 font-semibold text-yellow-600 rounded-lg transition-all 
-                duration-1000 ease-in-out inline-block overflow-hidden relative capitalize shadow-md hover:bg-yellow-600 hover:text-white
-                before:absolute before:-left-[100%] hover:before:left-full before:top-0 before:w-full before:h-full
-            before:bg-gradient-to-r before:from-transparent  before:via-white before:to-transparent before:transition-all before:duration-500 before:ease-linear">
-            GỬI ĐI
-            </button>
         </div>
         {isSent && <ToastContainer/>}
           </form>
