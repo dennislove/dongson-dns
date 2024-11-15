@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
-
+import { useNavigate } from "react-router-dom";
 import { getDatabase, ref, child, get, remove } from "firebase/database";
-import FormAddNews from './FormAddNews';
+import { getFirestore, doc, setDoc } from "firebase/firestore";
 import ReactPaginate from 'react-paginate';
+import { handleDelete } from '../../utils/handleDelete';
 
-function NewsTable() {
+function AdminTable() {
     // select database
     const [news, setNews] = useState([]);
     const [filteredNews, setFilteredNews] = useState([]);
@@ -18,6 +19,7 @@ function NewsTable() {
     const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
     const firstItemRank = ((currentPage - 1) * itemsPerPage) + 1;
 
+  const navigate = useNavigate()
     useEffect(() => {
       const dbRef = ref(getDatabase());
 
@@ -42,7 +44,6 @@ function NewsTable() {
 
     const [query, setQuery] = useState('');
 
-
     useEffect(() => {
       const results = news.filter(item =>
         item.title.toLowerCase().includes(query)
@@ -56,29 +57,51 @@ function NewsTable() {
     // Pagination handler
     const handlePageClick = (event) => {
       setCurrentPage(event.selected + 1);
-    };
+  };
+
+  const realtimeDb = getDatabase();
+const firestoreDb = getFirestore();
+const handleDeleteRealtimeNews = async (newsId) => {
+  // Hiển thị hộp thoại xác nhận
+  const confirmDelete = window.confirm("Bạn có chắc chắn muốn xóa không?");
+
+  if (confirmDelete) {
+    try {
+      // Tham chiếu đến document trong Realtime Database
+      const newsRef = ref(realtimeDb, `du-an/${newsId}`); 
   
-    const handleDeleteNews = (newsId) => {
-      const db = getDatabase();
-      const newsRef = ref(db, `News/${newsId}`);
+      // Lấy dữ liệu của document từ Realtime Database
+      const newsSnapshot = await get(newsRef);
+
+      if (newsSnapshot.exists()) {
+        const newsData = newsSnapshot.val();
+        
+        const trashDocRef = doc(firestoreDb, 'Trash', newsId);
+        await setDoc(trashDocRef, { ...newsData,source: 'realtime', deletedAt: new Date() });
+        await remove(newsRef);
+  
+        alert("Xóa thành công và di chuyển vào Trash!");
+  
+        window.location.reload();
+      } else {
+        console.log("No such document in News!");
+      }
+    } catch (error) {
+      console.error("Error deleting document: ", error);
+    }
+  }
+};
     
-      remove(newsRef)
-        .then(() => {
-          console.log(`News item with ID: ${newsId} has been deleted.`);
-          // Cập nhật state nếu cần
-          setNews((currentNews) => currentNews.filter((item) => item.id !== newsId));
-        })
-        .catch((error) => {
-          console.error("Error deleting news item:", error);
-        });
+    const handleUpdateClick = (doc) => {
+      // console.log(doc)
+      navigate('/admin-du-an-update', { state: doc });
+    
     };
+
 
   return (
     <div className="mt-12 mb-8 flex flex-col gap-4">
-      
-    
-    <FormAddNews />
-
+      <h2 className=' font-bold text-2xl font-inter' > Danh sách các dự án</h2>
        {/* ----------table------------ */}
        
        <div className="overflow-x-auto relative shadow-md sm:rounded-lg font-inter">
@@ -89,16 +112,16 @@ function NewsTable() {
                   #
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  Title
+                  Tiêu đề
                 </th>
                 <th scope="col" className="py-3 px-6">
                   Slug
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  Created At
+                  Ngày tạo
                 </th>
                 <th scope="col" className="py-3 px-6">
-                  Function
+                  Chức năng
                 </th>
               </tr>
             </thead>
@@ -120,7 +143,8 @@ function NewsTable() {
                 </td>
                 <td className="py-4 px-6 flex">
                   
-                  <h2 onClick={() => handleDeleteNews(item.id)} className="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline ml-4">Delete</h2>
+                    <h2 onClick={() => handleUpdateClick(item.id)} className="font-medium cursor-pointer text-blue-600 dark:text-blue-500 hover:underline ml-4">Sửa</h2>
+                    <h2 onClick={() => handleDeleteRealtimeNews(item.id)} className="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline ml-4">Xóa</h2>
                 </td>
               </tr>
                  ))}
@@ -152,7 +176,7 @@ function NewsTable() {
         initialPage={currentPage - 1}
       />
   <span className="text-sm">
-    Page {currentPage} of {totalPages}
+    Trang {currentPage} của {totalPages}
   </span>
 </div>
 
@@ -161,4 +185,4 @@ function NewsTable() {
   )
 }
 
-export default NewsTable
+export default AdminTable

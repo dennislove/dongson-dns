@@ -17,7 +17,7 @@ const useFirestoreCollectionWithIndexes = (collectionName, fetchLimit) => {
         const collectionQuery = query(
           collectionRef, 
           limit(fetchLimit),
-          orderBy('title', 'asc') 
+          orderBy('title', 'asc')
         );
 
         const snapshot = await getDocs(collectionQuery);
@@ -25,8 +25,9 @@ const useFirestoreCollectionWithIndexes = (collectionName, fetchLimit) => {
           const fetchedData = [];
           snapshot.forEach(doc => {
             // Retrieve only image and title fields
-            const { image, title } = doc.data();
-            fetchedData.push({ id: doc.id, image, title });
+            const { image, title , subtitle, images, descriptions, link} = doc.data();
+            fetchedData.push({ id: doc.id, image, title, subtitle, images, descriptions, link });
+            
           });
           setData(fetchedData);
         } else {

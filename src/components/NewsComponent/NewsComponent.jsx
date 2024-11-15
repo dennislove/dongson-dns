@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function NewsComponent() {
 
-  const { data: news} = useFirestoreCollectionWithIndexes('News',4);
+  const { data: news} = useFirestoreCollectionWithIndexes('News',10);
 
     const [filteredNews, setFilteredNews] = useState([]);
     const [query, setQuery] = useState('');

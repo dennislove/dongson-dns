@@ -4,7 +4,8 @@ import useFirestoreCollection from '../../hooks/useFirestoreCollection';
 
 function ImgCustomer() {
 
-  const { data: customers} = useFirestoreCollection('Customers', 18);
+  const { data: customers } = useFirestoreCollection('Customers', 18);
+  console.log(customers)
 
   return (
     <div className='grid  mt-6 lg:px-0 pm:px-10

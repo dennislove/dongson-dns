@@ -14,8 +14,8 @@ import { getDatabase, ref,get, orderByChild, equalTo, set, push, serverTimestamp
 
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { getFirestore } from 'firebase/firestore';
-import PageTitleManager from './routes/PageTitleManager';
 import firebaseConfig from './config/firebaseConfig';
+import PageTitleManager from './routes/PageTitleManager';
 
 
 // Initialize Firebase
@@ -48,6 +48,6 @@ function App() {
      </Router>
   )
 }
-export { database, storage, db, ref, set,get, push, storageRef, orderByChild, equalTo, uploadBytes, getDownloadURL, serverTimestamp };
+export { database, storage, db, ref, set,get, push, storageRef, orderByChild, equalTo, uploadBytes, getDownloadURL, serverTimestamp , getStorage};
 
 export default App;

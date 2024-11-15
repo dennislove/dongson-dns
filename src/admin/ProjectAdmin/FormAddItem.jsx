@@ -1,26 +1,8 @@
 import React, { useState } from 'react'
 import { database, storage, ref, set, push, storageRef, uploadBytes, getDownloadURL, serverTimestamp } from '../../App';
+import { ToSlug } from './ToSlug';
 
-function toSlug(text) {
-    return text.toLowerCase()
-    .replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a')
-    .replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e')
-    .replace(/i|í|ì|ỉ|ĩ|ị/gi, 'i')
-    .replace(/ó|ò|ỏ|õ|ọ|ô|ố|ồ|ổ|ỗ|ộ|ơ|ớ|ờ|ở|ỡ|ợ/gi, 'o')
-    .replace(/ú|ù|ủ|ũ|ụ|ư|ứ|ừ|ử|ữ|ự/gi, 'u')
-    .replace(/ý|ỳ|ỷ|ỹ|ỵ/gi, 'y')
-    .replace(/đ/gi, 'd')
-    .replace(/\`|\~|\!|\@|\#|\||\$|\%|\^|\&|\*|\(|\)|\+|\=|\,|\.|\/|\?|\>|\<|\'|\"|\:|\;|_/gi, '')
-    .replace(/ /gi, "-")
-    .replace(/\-\-\-\-\-/gi, '-')
-    .replace(/\-\-\-\-/gi, '-')
-    .replace(/\-\-\-/gi, '-')
-    .replace(/\-\-/gi, '-')
-    .replace(/\@\-|\-\@|\@/gi, '')
-      .trim();
-  }
-
-function FormAddNews() {
+function FormAddItem() {
 
     const [title, setTitle] = useState('');
     const [slug, setSlug] = useState('');
@@ -41,7 +23,7 @@ function FormAddNews() {
       const handleTitleChange = (event) => {
         const newTitle = event.target.value;
         setTitle(newTitle);
-        setSlug(toSlug(newTitle));
+        setSlug(ToSlug(newTitle));
   };
 
   const handleDescriptionChange = (index) => (event) => {
@@ -68,7 +50,7 @@ const handleDeleteDescription = () => {
     e.preventDefault();
     if (!image || !title) 
     return(
-      alert("Please enter complete information")
+      alert("Hãy điền đủ thông tin.")
     );
 
     const imageRef = storageRef(storage, `images/du-an/${image.name}`);
@@ -88,9 +70,10 @@ const handleDeleteDescription = () => {
     //   image: image
     }).then(() => {
         // set(counterRef, nextId);
-      alert('Data uploaded successfully!');
+      alert('Đăng bài thành công!');
+      window.location.reload()
     }).catch((error) => {
-      alert('Failed to upload data:', error);
+      alert('Lỗi khi đăng bài:', error);
     });
   };
 
@@ -98,13 +81,13 @@ const handleDeleteDescription = () => {
     return(
       <form className=" space-y-6 border-2 p-6 bg-white rounded-lg font-inter" onSubmit={handleSubmit} >
       <div className="rounded-md shadow-sm ">
-        <h1>Post News</h1>
+        <h1 className=' font-bold text-2xl'>Thêm dự án mới</h1>
         <div className=" flex flex-col gap-3 my-3">
             <input
             type="text"
             id="title"
             className="form-control outline-none border rounded-lg p-2"
-            placeholder="Title"
+            placeholder="Tiêu đề"
             value={title}
             onChange={handleTitleChange}
             />
@@ -120,15 +103,15 @@ const handleDeleteDescription = () => {
                     <textarea
                         key={index}
                         className="form-control outline-none border rounded-lg p-2 h-[100px]"
-                        placeholder={`Description ${index + 1}`}
+                        placeholder={`Mô tả ${index + 1}`}
                         value={item.desc}
                         onChange={handleDescriptionChange(index)}
                     />
                 ))}
                 <div className='flex gap-3'>
-                  <button type='button' className=' bg-[#6366f1] text-white px-3 py-2 rounded-lg ' onClick={handleAddDescription}>Add</button>
+                  <button type='button' className=' bg-[#6366f1] text-white px-3 py-2 rounded-lg ' onClick={handleAddDescription}>Thêm nữa</button>
                   {descriptions.length > 1 && (
-                    <button type="button" className='border border-[#6366f1] text-[#6366f1] px-3 py-2 rounded-lg' onClick={handleDeleteDescription}>Delete</button>
+                    <button type="button" className='border border-[#6366f1] text-[#6366f1] px-3 py-2 rounded-lg' onClick={handleDeleteDescription}>Xóa bớt</button>
                   )}
                 </div>
               
@@ -138,10 +121,10 @@ const handleDeleteDescription = () => {
         <input type="file"  onChange={handleUploadFile} />
         
       </div>
-        <button type="submit" className='py-3 w-full  bg-[#6366f1] text-white font-rob mt-4 rounded-lg' >Post</button>
+        <button type="submit" className='py-3 w-full  bg-[#6366f1] text-white font-rob mt-4 rounded-lg' >Đăng bài</button>
       </div>
     </form>
     )
 }
 
-export default FormAddNews
+export default FormAddItem
